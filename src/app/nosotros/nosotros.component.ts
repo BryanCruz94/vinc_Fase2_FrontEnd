@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { datosMovil, datosWeb, datosWebF2} from './datos';
+import { datosMovil, datosMovilF2, datosWeb, datosWebF2} from './datos';
 
 @Component({
   selector: 'app-nosotros',
@@ -27,5 +27,14 @@ export class NosotrosComponent {
     {name: 'Stefany Erazo', range: 'Estudiante', gmail: 'scerazo1@espe.edu.ec', url:'../../assets/img/administradores/Stefy_Erazo.jpg'},
     {name: 'Stefanny Hernandez', range: 'Estudiante', gmail: 'smhernandez2@espe.edu.ec', url:'../../assets/img/administradores/Stefy Hernandez.jpeg'},
   ];
+
+  datosMovilF2: datosMovilF2[] = [
+    {name: 'Lina Bohorquez', range: 'Estudiante', gmail: 'lnbohorquez@espe.edu.ec', url:'../../assets/img/administradores/LeslyGaibor.jpg'},
+    {name: 'Steeven Riofrío', range: 'Estudiante', gmail: 'sjriofrio@espe.edu.ec', url:'../../assets/img/administradores/MelanyCaicedo.jpg'},
+    {name: 'Sánchez Jair', range: 'Estudiante', gmail: 'jssanchez9@espe.edu.ec', url:'../../assets/img/administradores/BrayanPonce.jpg'},
+    {name: 'Mateo Beltrán', range: 'Estudiante', gmail: 'msbeltran@espe.edu.ec', url:'../../assets/img/administradores/MiguelAjila.jpg'},
+    {name: 'Jhosue Chica', range: 'Estudiante', gmail: 'jichica@espe.edu.ec', url:'../../assets/img/administradores/MiguelAjila.jpg'},
+  ];
+
 
 }

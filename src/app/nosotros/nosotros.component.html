@@ -69,5 +69,24 @@
                 </figure>
             </div>
         </div>
+
+        <br>
+        <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil Fase II</h3>
+        <div class="contenedor_foto">
+            <div *ngFor="let datosMovilF2 of datosMovilF2">
+                <figure class="targeta_foto">
+                    <div>
+                        <img class="fotosAdmin" src="{{ datosMovilF2.url }}" alt="{{ datosMovilF2.name }}">
+                    </div>
+                    <h4 class="h4 form-title">{{ datosMovilF2.name }}</h4>
+                    <hr class="separador_admins">
+                    <div class="contenedor_info">
+                        <h5>{{ datosMovilF2.range }}</h5>
+                        <p>{{ datosMovilF2.gmail }}</p>
+                    </div>
+                    <hr class="separador_admins">
+                </figure>
+            </div>
+        </div>
     </section>
 </article>

@@ -18,3 +18,10 @@ export interface datosMovil {
     gmail: String;
     url: String;
 }
+
+export interface datosMovilF2 {
+    name: string;
+    range: string;
+    gmail: String;
+    url: String;
+}
