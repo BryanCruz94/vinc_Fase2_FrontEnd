@@ -16,6 +16,7 @@ export interface Transaction {
 
 export interface categoria {
     title: string;
+    sector: string;
     category: string;
     img: string;
     imgPop: String;
