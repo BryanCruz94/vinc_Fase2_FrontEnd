@@ -29,11 +29,11 @@ export class NosotrosComponent {
   ];
 
   datosMovilF2: datosMovilF2[] = [
-    {name: 'Lina Bohorquez', range: 'Estudiante', gmail: 'lnbohorquez@espe.edu.ec', url:'../../assets/img/administradores/LeslyGaibor.jpg'},
-    {name: 'Steeven Riofrío', range: 'Estudiante', gmail: 'sjriofrio@espe.edu.ec', url:'../../assets/img/administradores/MelanyCaicedo.jpg'},
-    {name: 'Sánchez Jair', range: 'Estudiante', gmail: 'jssanchez9@espe.edu.ec', url:'../../assets/img/administradores/BrayanPonce.jpg'},
-    {name: 'Mateo Beltrán', range: 'Estudiante', gmail: 'msbeltran@espe.edu.ec', url:'../../assets/img/administradores/MiguelAjila.jpg'},
-    {name: 'Jhosue Chica', range: 'Estudiante', gmail: 'jichica@espe.edu.ec', url:'../../assets/img/administradores/MiguelAjila.jpg'},
+    {name: 'Lina Bohorquez', range: 'Estudiante', gmail: 'lnbohorquez@espe.edu.ec', url:'../../assets/img/administradores/Bohorquez.jpeg'},
+    {name: 'Steeven Riofrío', range: 'Estudiante', gmail: 'sjriofrio@espe.edu.ec', url:'../../assets/img/administradores/riofrio.jpeg'},
+    {name: 'Sánchez Jair', range: 'Estudiante', gmail: 'jssanchez9@espe.edu.ec', url:'../../assets/img/administradores/Sanchez.png'},
+    {name: 'Mateo Beltrán', range: 'Estudiante', gmail: 'msbeltran@espe.edu.ec', url:'../../assets/img/administradores/Beltran.jpeg'},
+    {name: 'Jhosue Chica', range: 'Estudiante', gmail: 'jichica@espe.edu.ec', url:'../../assets/img/administradores/ChicaJhosue.png'},
   ];
 
 
