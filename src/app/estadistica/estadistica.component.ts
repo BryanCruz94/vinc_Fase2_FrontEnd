@@ -10,6 +10,9 @@ import { ResultObject, Transaction, mes, dia } from '../interfaces/incidentes.in
 export class EstadisticaComponent implements OnInit {
   @ViewChild('filterDaySelect') filterDaySelect!: ElementRef<HTMLSelectElement>;
 
+  selectedType = 'COMUNIDADES';
+
+
   years: number[] = [];
   sectors: string[] = [];
 
@@ -96,12 +99,45 @@ export class EstadisticaComponent implements OnInit {
     { num: "31" }
   ]
 
+  //MÉTODO PARA FILTRAR POR SECTORES O UNIDADES EDUCATIVAS
+  selectType(type: string): void {
+    this.selectedType = type;
+  }
 
   ngOnInit(): void {
     this.getAnios();
     this.getSector();
     this.inicializarDatos();
   }
+  
+
+  filterBySector(selectedSector: string): void {
+    this.selectedSector = selectedSector;
+    
+    if (selectedSector === 'all') {
+      // Si se selecciona "Todos", mostrar todas las transacciones sin filtrar
+      this.filteredTransactions = [...this.transactions];
+      this.connectService.setFilteredTransactions(this.filteredTransactions);
+    } else {
+      // Si se selecciona un sector específico, cargar los incidentes por sector
+      this.connectService.cargarTotalIncidentesPorSector(selectedSector).subscribe((res: any) => {
+        // Mapear los datos de respuesta a un formato adecuado para la tabla
+        const filteredItems = Object.entries(res).map(([item, cost]) => {
+          const filteredTransaction: Transaction = {
+            item: this.labelMappings[item.toString()] || item,
+            cost,
+            year: selectedSector
+          };
+          return filteredTransaction;
+        });
+  
+        // Actualizar las transacciones filtradas
+        this.filteredTransactions = filteredItems;
+        this.connectService.setFilteredTransactions(this.filteredTransactions);
+      });
+    }
+  }
+  
 
   getAnios(): void {
     this.connectService.cargarAnios().subscribe((data: number[]) => {
@@ -153,28 +189,7 @@ export class EstadisticaComponent implements OnInit {
       .reduce((acc, value) => acc + Number(value), 0); // Convertir a número antes de sumar
   }
 
-  filterBySector(selectedSector: string): void {
-    this.selectedSector = selectedSector;
-    if (selectedSector === 'all') {
-      this.filteredTransactions = this.transactions; // Mostrar todas las transacciones
-      this.connectService.setFilteredTransactions(this.filteredTransactions);
-    } else {
-      this.connectService.cargarTotalIncidentesPorSector(selectedSector).subscribe((res: any) => {
 
-        const filteredItems = Object.entries(res).map(([item, cost]) => {
-          const filteredTransaction: Transaction = {
-            item: this.labelMappings[item.toString()] || item,
-            cost,
-            year: selectedSector
-          };
-          return filteredTransaction;
-        });
-
-        this.filteredTransactions = filteredItems;
-        this.connectService.setFilteredTransactions(this.filteredTransactions);
-      });
-    }
-  }
 
   filterByYearAndSector(): void {
     this.connectService.cargarTotalIncidentesPorSectorYAnio(this.selectedYear, this.selectedSector).subscribe((res: any) => {
@@ -324,4 +339,6 @@ export class EstadisticaComponent implements OnInit {
         });
     }
   }
+
+  
 }

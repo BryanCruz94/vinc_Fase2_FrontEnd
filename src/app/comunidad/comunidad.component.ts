@@ -7,7 +7,7 @@ import { categoria } from '../interfaces/incidentes.interface';
   styleUrls: ['./comunidad.component.css']
 })
 export class ComunidadComponent {
-
+ 
   popupData: any;
 
   selectedFilterValue = 'Entidad Pública';
