@@ -100,14 +100,21 @@
           <button class="navbar-link" [ngClass]="{ 'active': currentPage === 'comunidad' }" data-nav-link
             (click)="selectPage(pages[1])">Comunidad</button>
         </li>
-        <li class="navbar-item" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()">
-          <button class="navbar-link" [ngClass]="{ 'active': currentPage === 'estadistica-u' || currentPage === 'estadistica' }" data-nav-link
-            (click)="toggleDropdown()">Estadistica</button>
-          <div class="dropdown-menu" *ngIf="isDropdownVisible">
-            <button class="dropdown-item navbar-link"  [ngClass]="{ 'active': currentPage === 'estadistica'}" (click)="selectPage(pages[2])">Comunidad</button>
-            <button class="dropdown-item navbar-link"  [ngClass]="{ 'active': currentPage === 'estadistica-u'}" (click)="selectPage(pages[3])">Unidades Educativas</button>
+        <li class="navbar-item">
+          <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()">
+            Estadistica
+            <div class="dropdown-menu" *ngIf="isDropdownVisible">
+              <button class="dropdown-item navbar-link" [ngClass]="{ 'active': currentPage === 'estadistica' }" (click)="selectPage(pages[2])">
+                Comunidad
+              </button>
+              <button class="dropdown-item navbar-link" [ngClass]="{ 'active': currentPage === 'estadistica-u' }" (click)="selectPage(pages[3])">
+                Unidades Educativas
+              </button>
+            </div>
           </div>
         </li>
+        
+
 
 
         <li class="navbar-item">
