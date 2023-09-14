@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     { name: "inicio", id: "inicio" },
     { name: "comunidad", id: "comunidad" },
     { name: "estadistica", id: "estadistica" },
+    { name: "estadistica-u", id: "estadistica-u" },
     { name: "contacto", id: "contacto" },
     { name: "nosotros", id: "nosotros" }
   ];

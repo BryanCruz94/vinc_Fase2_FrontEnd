@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +24,7 @@ import { Grafico1Component } from './estadistica/grafico1/grafico1.component';
 import { Grafico2Component } from './estadistica/grafico2/grafico2.component';
 
 import * as CanvasJSAngularChart from '../assets/canvas/canvasjs.angular.component';
+import { EstadisticaUComponent } from './estadistica-u/estadistica-u.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
@@ -37,7 +38,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     NosotrosComponent,
     Grafico1Component,
     Grafico2Component,
-    CanvasJSChart
+    CanvasJSChart,
+    EstadisticaUComponent
   ],
   imports: [
     BrowserModule,
