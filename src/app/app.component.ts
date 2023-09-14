@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'vinculacion_angular';
+  isDropdownVisible = false;
 
   isSidebarActive = false;
   selectedTestimonial: any = null;
+  
 
   pages = [
     { name: "inicio", id: "inicio" },
@@ -24,7 +26,7 @@ export class AppComponent implements OnInit {
 
   formInputs: HTMLInputElement[];
 
-  constructor() {
+  constructor(private elementRef: ElementRef) {
     this.formInputs = [];
   }
 
@@ -44,10 +46,29 @@ export class AppComponent implements OnInit {
     this.selectedTestimonial = null;
   }
 
-  //Navegacion
+  // Navegacion
   selectPage(page: any): void {
     this.activePageId = page.id;
     this.currentPage = page.id;
     window.scrollTo(0, 0);
   }
+
+  @HostListener('document:click', ['$event'])
+  handleClick(event: Event): void {
+    // Verifica si el mouse está dentro del menú desplegable o el botón antes de ocultarlo
+    const isMouseInside = this.elementRef.nativeElement.contains(event.target as Node);
+    if (!isMouseInside) {
+      this.isDropdownVisible = false;
+    }
+  }
+
+  toggleDropdown(): void {
+    this.isDropdownVisible = !this.isDropdownVisible;
+  }
+  
+  hideDropdown(): void {
+    this.isDropdownVisible = false;
+  }
+  
+  
 }

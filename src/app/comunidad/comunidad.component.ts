@@ -22,6 +22,17 @@ export class ComunidadComponent {
 
     //Organismos
     {
+      title: 'GAD - LUZ DE AMERICA',
+      sector: 'Luz de America',
+      category: 'Entidad Pública',
+      img: '../../assets/img/DirectorioComunidad/Organismos/LuzDeAmerica/GadLuzDeAmerica.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/LuzDeAmerica/GadLuzMap.png',
+      atencion: '08:00am – 17:00pm',
+      contacto: '0994413190 - 022722055',
+      correo: 'gpluzamerica@hotmail.com',
+      ubicacion: 'https://goo.gl/maps/kZ8PkrgQBuMNg1FT6'
+    },
+    {
       title: 'UPC',
       sector: 'Luz de America',
       category: 'Entidad Pública',
@@ -87,7 +98,7 @@ export class ComunidadComponent {
       title: 'Unidad Educativa "PUERTO LIMÓN"',
       sector: 'Puerto Limón',
       category: 'Escuela',
-      img: '../../assets/img/DirectorioComunidad/Escuelas/TreceAbril.jpg',
+      img: '../../assets/img/DirectorioComunidad/Escuelas/PtoLimon/EscuelaPuertoLimon.png',
       imgPop: '../../assets/img/DirectorioComunidad/Escuelas/TreceAbril/foto1.jpg',
       atencion: 'Lunes a Viernes de puerto limon pm',
       contacto: '02 272 2109',
@@ -95,17 +106,42 @@ export class ComunidadComponent {
       ubicacion: 'https://goo.gl/maps/rLetQZyVfoB6rGyt9'
     },
     {
-      title: 'UPC - PUERTO LIMÓN',
+      title: 'GAD - PUERTO LIMÓN',
       sector: 'Puerto Limón',
       category: 'Entidad Pública',
-      img: '../../assets/img/DirectorioComunidad/Organismos/PoliciaNacional.jpg',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/UPC/UPC.jpg',
+      img: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
+      atencion: '00:00am – 23:59pm',
+      contacto: '(02) 385-6296',
+      correo: 'info@puertolimon.gob.ec',
+      ubicacion: 'https://goo.gl/maps/ZVavgPSgLGexqj5c6'
+    },
+// *********************************************************************+
+    //                      SECTOR EL ESFUERZO
+    // *********************************************************************+
+
+    {
+      title: 'Unidad Educativa "EL ESFUERZO"',
+      sector: 'El Esfuerzo',
+      category: 'Escuela',
+      img: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/EscuelaElEsfuerzo.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/EscuelaElEsfuerzo.png',
+      atencion: 'Lunes a Viernes de puerto limon pm',
+      contacto: '02 272 2109',
+      correo: 'escuelatrecedeabril@gmail.com',
+      ubicacion: 'https://goo.gl/maps/P1oLpYqzQm35RTuL7'
+    },
+    {
+      title: 'GAD - EL ESFUERZO',
+      sector: 'El Esfuerzo',
+      category: 'Entidad Pública',
+      img: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
       atencion: '00:00am – 23:59pm',
       contacto: '022 233 283',
       correo: 'dnpolco.servicios@gmail.com',
       ubicacion: 'https://goo.gl/maps/fzFyUXTvZGEezhL3A'
     },
-
     
   ];
 
