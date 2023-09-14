@@ -102,12 +102,12 @@
         </li>
         <li class="navbar-item">
           <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()">
-            Estadistica
-            <div class="dropdown-menu" *ngIf="isDropdownVisible">
-              <button class="dropdown-item navbar-link" [ngClass]="{ 'active': currentPage === 'estadistica' }" (click)="selectPage(pages[2])">
-                Comunidad
+            Estadisticas
+            <div class="dropdown-menu menu-drop" *ngIf="isDropdownVisible">
+              <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica' }" (click)="selectPage(pages[2])">
+              Comunidades
               </button>
-              <button class="dropdown-item navbar-link" [ngClass]="{ 'active': currentPage === 'estadistica-u' }" (click)="selectPage(pages[3])">
+              <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica-u' }" (click)="selectPage(pages[3])">
                 Unidades Educativas
               </button>
             </div>
