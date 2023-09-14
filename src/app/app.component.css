@@ -1,0 +1,15 @@
+.link-drop{
+    color:rgb(255, 255, 255);
+    padding-left: 12px;
+    font-size: 12px;
+   
+}
+
+.menu-drop{
+    background-color: rgba(31, 80, 34, 0.906);
+}
+
+.link-drop:hover{
+    background-color: #94CC8B;
+    color:rgb(36, 35, 35);
+}
