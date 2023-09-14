@@ -100,20 +100,16 @@
           <button class="navbar-link" [ngClass]="{ 'active': currentPage === 'comunidad' }" data-nav-link
             (click)="selectPage(pages[1])">Comunidad</button>
         </li>
+        <li>
 
-            (click)="toggleDropdown()">Estadistica</button>
+          <button (click)="toggleDropdown()">Estadistica</button>
           <div class="dropdown-menu" *ngIf="isDropdownVisible">
-            <button class="dropdown-item" (click)="selectPage(pages[2])">Opción 1</button>
+            <button class="dropdown-item" (click)="selectPage(pages[2])">Comunidad</button>
+            <button class="dropdown-item" (click)="selectPage(pages[3])">Unidades Educativas</button>
           </div>
         </li>
-        
-        
-        
-        
-        
-        
-        
->>>>>>> Stashed changes
+
+
         <li class="navbar-item">
           <button class="navbar-link" [ngClass]="{ 'active': currentPage === 'contacto' }" data-nav-link
             (click)="selectPage(pages[4])">Contacto</button>
@@ -148,7 +144,7 @@
       <app-estadistica></app-estadistica>
     </ng-container>
 
-      <!--
+    <!--
         - #ESTADISTICA UNIDADES EDUCATIVAS
     -->
     <ng-container *ngIf="activePageId === 'estadistica-u'">
