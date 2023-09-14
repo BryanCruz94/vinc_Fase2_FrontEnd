@@ -126,6 +126,7 @@ export class ComunidadComponent {
   }
   
 
+  // CONTROLAR LAS VENTANAS
   openPopup(categoria: any): void {
     this.popupData = { ...categoria };
   }
