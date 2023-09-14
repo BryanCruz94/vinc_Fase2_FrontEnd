@@ -3,8 +3,18 @@
     <header>
         <h2 class="h2 article-title">Estadística</h2>
     </header>
+
     <section>
-        <h3 class="h3 form-title">Situación Actual</h3>
+        <ul class="filter-list">
+            <li class="filter-item">
+                <button [class.active]="selectedType === 'COMUNIDADES'"
+                    (click)="selectType('COMUNIDADES')"><h3>COMUNIDADES </h3></button>
+            </li>
+            <li class="filter-item">
+                <button [class.active]="selectedType === 'UNIDADES EDUCATIVAS'"
+                    (click)="selectType('UNIDADES EDUCATIVAS')"><h3>UNIDADES EDUCATIVAS</h3></button>
+            </li>
+        </ul>
     </section>
 
     <label class="filter-label">Filtrar por:</label>
@@ -33,7 +43,7 @@
                 <option value="all">Todos</option>
                 <option *ngFor="let year of years" [value]="year">{{ year }}</option>
             </select>
-        </div> 
+        </div>
         <div class="filter-container">
             <label class="filter-label" for="filterMonth">Mes</label>
             <select class="filter-select" id="filterMonth" #filterMonthSelect

@@ -3,14 +3,14 @@
         <h2 class="h2 article-title">Directorio</h2>
     </header>
     <section class="projects">
-        <ul class="filter-list">
+        <ul class="filter-list encabezado">
             <li class="filter-item">
                 <button [class.active]="selectedSector === 'Luz de America'"
-                    (click)="selectSector('Luz de America')" class="h2">LUZ DE AMÉRICA</button>
+                    (click)="selectSector('Luz de America')"><h3>LUZ DE AMÉRICA</h3></button>
             </li>
             <li class="filter-item">
                 <button [class.active]="selectedSector === 'Puerto Limón'"
-                    (click)="selectSector('Puerto Limón')" class="h2">PUERTO LIMÓN</button>
+                    (click)="selectSector('Puerto Limón')"><h3>PUERTO LIMÓN</h3></button>
             </li>
         </ul>
 
@@ -27,13 +27,6 @@
             
         </ul>
 
-        <div class="filter-select-box">
-            <select class="filter-select" [(ngModel)]="selectedFilterValue">
-                <option value="Entidad Pública">Organismos</option>
-                <option value="Escuela">Escuelas</option>
-                
-            </select>
-        </div>
 
         <ul class="project-list">
             <li class="project-item" *ngFor="let categoria of filterByCategoria(categoria, selectedFilterValue, selectedSector)"
