@@ -29,7 +29,7 @@ export class NosotrosComponent {
   ];
 
   datosMovilF2: datosMovilF2[] = [
-    {name: 'Lina Bohorquez', range: 'Estudiante', gmail: 'lnbohorquez@espe.edu.ec', url:'../../assets/img/administradores/lina.png'},
+    {name: 'Lina Bohorquez', range: 'Estudiante', gmail: 'lnbohorquez@espe.edu.ec', url:'../../assets/img/administradores/Lina.png'},
     {name: 'Steeven Riofrío', range: 'Estudiante', gmail: 'sjriofrio@espe.edu.ec', url:'../../assets/img/administradores/riofrio.png'},
     {name: 'Sánchez Jair', range: 'Estudiante', gmail: 'jssanchez9@espe.edu.ec', url:'../../assets/img/administradores/Sanchez.png'},
     {name: 'Mateo Beltrán', range: 'Estudiante', gmail: 'msbeltran@espe.edu.ec', url:'../../assets/img/administradores/Beltran.jpeg'},

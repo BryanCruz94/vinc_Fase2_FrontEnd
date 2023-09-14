@@ -526,6 +526,7 @@ main {
   .dropdown-item {
     display: block;
     padding: 10px;
+    margin: 5px 0; /* Agrega margen vertical */
     color: var(--light-gray);
     text-decoration: none;
     transition: background-color 0.3s;
