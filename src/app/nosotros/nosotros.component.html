@@ -2,6 +2,25 @@
     <header>
         <h2 class="h2 article-title">Sobre Nosotros</h2>
     </header>
+    
+    <style>
+        .contenedor-redondeado-Fase2 {
+            background-color: #F5F5F5; /* Color de fondo celeste */
+            border-radius: 10px; /* Borde redondeado de 10px (ajusta según lo desees) */
+            padding: 20px; /* Relleno interior del contenedor */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra con desplazamiento y opacidad */
+
+        }
+
+        .contenedor-redondeado-Fase1 {
+            background-color: #F0FFFF; /* Color de fondo celeste */
+            border-radius: 10px; /* Borde redondeado de 10px (ajusta según lo desees) */
+            padding: 20px; /* Relleno interior del contenedor */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra con desplazamiento y opacidad */
+
+        }
+    </style>
+
     <section>
         <h3 class="h3 form-title title_desarrolladores">Equipo de desarrollo</h3>
         <div class="img_general_mosotros">
@@ -18,52 +37,51 @@
             De la misma manera el principal objetivo de este desarrollo web, es la presentación de ciertas variedades de
             estadísticas de lo que transcurre a lo largo de los días, meses, semanas y años.
         </p>
-
-        <div class="container p 5" style="background-color: rgb(70, 80, 39);  margin: 10px;  border: 1px solid #888;
-        border-radius: 10px;">
-            <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase II</h3>
-            <div class="contenedor_foto">
-                <div *ngFor="let datosWebF2 of datosWebF2">
-                    <figure class="targeta_foto">
-                        <div>
-                            <img class="fotosAdmin" src="{{ datosWebF2.url }}" alt="{{ datosWebF2.name }}">
-                        </div>
-                        <h4 class="h4 form-title">{{ datosWebF2.name }}</h4>
-                        <hr class="separador_admins">
-                        <div class="contenedor_info">
-                            <h5>{{ datosWebF2.range }}</h5>
-                            <p>{{ datosWebF2.gmail }}</p>
-                        </div>
-                        <hr class="separador_admins">
-                    </figure>
+        <br>
+        <div class="contenedor-redondeado-Fase2">
+                            <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase II</h3>
+                <div class="contenedor_foto">
+                    <div *ngFor="let datosWebF2 of datosWebF2">
+                        <figure class="targeta_foto">
+                            <div>
+                                <img class="fotosAdmin" src="{{ datosWebF2.url }}" alt="{{ datosWebF2.name }}">
+                            </div>
+                            <h4 class="h4 form-title">{{ datosWebF2.name }}</h4>
+                            <hr class="separador_admins">
+                            <div class="contenedor_info">
+                                <h5>{{ datosWebF2.range }}</h5>
+                                <p>{{ datosWebF2.gmail }}</p>
+                            </div>
+                            <hr class="separador_admins">
+                        </figure>
+                    </div>
                 </div>
+                <br>
+                <br>
+                <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil Fase II</h3>
+                <div class="contenedor_foto">
+                    <div *ngFor="let datosMovilF2 of datosMovilF2">
+                        <figure class="targeta_foto">
+                            <div>
+                                <img class="fotosAdmin" src="{{ datosMovilF2.url }}" alt="{{ datosMovilF2.name }}">
+                            </div>
+                            <h4 class="h4 form-title">{{ datosMovilF2.name }}</h4>
+                            <hr class="separador_admins">
+                            <div class="contenedor_info">
+                                <h5>{{ datosMovilF2.range }}</h5>
+                                <p>{{ datosMovilF2.gmail }}</p>
+                            </div>
+                            <hr class="separador_admins">
+                        </figure>
+                    </div>
             </div>
             <br>
-
-            <br>
-            <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil Fase II</h3>
-            <div class="contenedor_foto">
-                <div *ngFor="let datosMovilF2 of datosMovilF2">
-                    <figure class="targeta_foto">
-                        <div>
-                            <img class="fotosAdmin" src="{{ datosMovilF2.url }}" alt="{{ datosMovilF2.name }}">
-                        </div>
-                        <h4 class="h4 form-title">{{ datosMovilF2.name }}</h4>
-                        <hr class="separador_admins">
-                        <div class="contenedor_info">
-                            <h5>{{ datosMovilF2.range }}</h5>
-                            <p>{{ datosMovilF2.gmail }}</p>
-                        </div>
-                        <hr class="separador_admins">
-                    </figure>
-                </div>
-            </div>
-            <br>
-
         </div>
-<br>
-            <div class="container p 5" style="background-color: aqua;  margin: 10px;  border: 1px solid #888;
-            border-radius: 10px;">
+        <br>
+
+
+        <div class="contenedor-redondeado-Fase1">
+            <div class="service-content-box">
                 <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase I</h3>
                 <div class="contenedor_foto">
                     <div *ngFor="let datosWeb of datosWeb">
@@ -81,7 +99,6 @@
                         </figure>
                     </div>
                 </div>
-
 
                 <br>
                 <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil I</h3>
@@ -101,7 +118,8 @@
                         </figure>
                     </div>
                 </div>
-                <br>
             </div>
+            <br>
+        </div>
     </section>
 </article>
