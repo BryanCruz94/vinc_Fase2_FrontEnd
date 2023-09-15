@@ -8,85 +8,100 @@
             <img class="imagenITIN" src="../../assets/img/logos/ITIN.png" alt="Itin">
         </div>
         <p class="service-item-text">
-            El aplicativo web "Seguridad Parroquial" es una herramienta diseñada para ayudarte en la gestión de la seguridad en tu parroquia y está dirigido a todos los miembros de la comunidad parroquial, en el cual podremos obtener información sobre robos, zonas de riesgo, escuelas y restaurantes, los cuales se encontraran referenciados en el sitio de SE SURVEY.
+            El aplicativo web "Seguridad Parroquial" es una herramienta diseñada para ayudarte en la gestión de la
+            seguridad en tu parroquia y está dirigido a todos los miembros de la comunidad parroquial, en el cual
+            podremos obtener información sobre robos, zonas de riesgo, escuelas y restaurantes, los cuales se
+            encontraran referenciados en el sitio de SE SURVEY.
         </p>
         <br>
         <p class="service-item-text">
-            De la misma manera el principal objetivo de este desarrollo web, es la presentación de ciertas variedades de estadísticas de lo que transcurre a lo largo de los días, meses, semanas y años.
+            De la misma manera el principal objetivo de este desarrollo web, es la presentación de ciertas variedades de
+            estadísticas de lo que transcurre a lo largo de los días, meses, semanas y años.
         </p>
-        <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase I</h3>
-        <div class="contenedor_foto">
-            <div *ngFor="let datosWeb of datosWeb">
-                <figure class="targeta_foto">
-                    <div>
-                        <img class="fotosAdmin" src="{{ datosWeb.url }}" alt="{{ datosWeb.name }}">
-                    </div>
-                    <h4 class="h4 form-title">{{ datosWeb.name }}</h4>
-                    <hr class="separador_admins">
-                    <div class="contenedor_info">
-                        <h5>{{ datosWeb.range }}</h5>
-                        <p>{{ datosWeb.gmail }}</p>
-                    </div>
-                    <hr class="separador_admins">
-                </figure>
-            </div>
-        </div>
 
-        <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase II</h3>
-        <div class="contenedor_foto">
-            <div *ngFor="let datosWebF2 of datosWebF2">
-                <figure class="targeta_foto">
-                    <div>
-                        <img class="fotosAdmin" src="{{ datosWebF2.url }}" alt="{{ datosWebF2.name }}">
-                    </div>
-                    <h4 class="h4 form-title">{{ datosWebF2.name }}</h4>
-                    <hr class="separador_admins">
-                    <div class="contenedor_info">
-                        <h5>{{ datosWebF2.range }}</h5>
-                        <p>{{ datosWebF2.gmail }}</p>
-                    </div>
-                    <hr class="separador_admins">
-                </figure>
+        <div class="container p 5" style="background-color: rgb(70, 80, 39);  margin: 10px;  border: 1px solid #888;
+        border-radius: 10px;">
+            <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase II</h3>
+            <div class="contenedor_foto">
+                <div *ngFor="let datosWebF2 of datosWebF2">
+                    <figure class="targeta_foto">
+                        <div>
+                            <img class="fotosAdmin" src="{{ datosWebF2.url }}" alt="{{ datosWebF2.name }}">
+                        </div>
+                        <h4 class="h4 form-title">{{ datosWebF2.name }}</h4>
+                        <hr class="separador_admins">
+                        <div class="contenedor_info">
+                            <h5>{{ datosWebF2.range }}</h5>
+                            <p>{{ datosWebF2.gmail }}</p>
+                        </div>
+                        <hr class="separador_admins">
+                    </figure>
+                </div>
             </div>
-        </div>
-        <br>
-        
-        <br>
-        <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil I</h3>
-        <div class="contenedor_foto">
-            <div *ngFor="let datosMovil of datosMovil">
-                <figure class="targeta_foto">
-                    <div>
-                        <img class="fotosAdmin" src="{{ datosMovil.url }}" alt="{{ datosMovil.name }}">
-                    </div>
-                    <h4 class="h4 form-title">{{ datosMovil.name }}</h4>
-                    <hr class="separador_admins">
-                    <div class="contenedor_info">
-                        <h5>{{ datosMovil.range }}</h5>
-                        <p>{{ datosMovil.gmail }}</p>
-                    </div>
-                    <hr class="separador_admins">
-                </figure>
-            </div>
-        </div>
+            <br>
 
-        <br>
-        <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil Fase II</h3>
-        <div class="contenedor_foto">
-            <div *ngFor="let datosMovilF2 of datosMovilF2">
-                <figure class="targeta_foto">
-                    <div>
-                        <img class="fotosAdmin" src="{{ datosMovilF2.url }}" alt="{{ datosMovilF2.name }}">
-                    </div>
-                    <h4 class="h4 form-title">{{ datosMovilF2.name }}</h4>
-                    <hr class="separador_admins">
-                    <div class="contenedor_info">
-                        <h5>{{ datosMovilF2.range }}</h5>
-                        <p>{{ datosMovilF2.gmail }}</p>
-                    </div>
-                    <hr class="separador_admins">
-                </figure>
+            <br>
+            <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil Fase II</h3>
+            <div class="contenedor_foto">
+                <div *ngFor="let datosMovilF2 of datosMovilF2">
+                    <figure class="targeta_foto">
+                        <div>
+                            <img class="fotosAdmin" src="{{ datosMovilF2.url }}" alt="{{ datosMovilF2.name }}">
+                        </div>
+                        <h4 class="h4 form-title">{{ datosMovilF2.name }}</h4>
+                        <hr class="separador_admins">
+                        <div class="contenedor_info">
+                            <h5>{{ datosMovilF2.range }}</h5>
+                            <p>{{ datosMovilF2.gmail }}</p>
+                        </div>
+                        <hr class="separador_admins">
+                    </figure>
+                </div>
             </div>
+            <br>
+
         </div>
+<br>
+            <div class="container p 5" style="background-color: aqua;  margin: 10px;  border: 1px solid #888;
+            border-radius: 10px;">
+                <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web Fase I</h3>
+                <div class="contenedor_foto">
+                    <div *ngFor="let datosWeb of datosWeb">
+                        <figure class="targeta_foto">
+                            <div>
+                                <img class="fotosAdmin" src="{{ datosWeb.url }}" alt="{{ datosWeb.name }}">
+                            </div>
+                            <h4 class="h4 form-title">{{ datosWeb.name }}</h4>
+                            <hr class="separador_admins">
+                            <div class="contenedor_info">
+                                <h5>{{ datosWeb.range }}</h5>
+                                <p>{{ datosWeb.gmail }}</p>
+                            </div>
+                            <hr class="separador_admins">
+                        </figure>
+                    </div>
+                </div>
+
+
+                <br>
+                <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil I</h3>
+                <div class="contenedor_foto">
+                    <div *ngFor="let datosMovil of datosMovil">
+                        <figure class="targeta_foto">
+                            <div>
+                                <img class="fotosAdmin" src="{{ datosMovil.url }}" alt="{{ datosMovil.name }}">
+                            </div>
+                            <h4 class="h4 form-title">{{ datosMovil.name }}</h4>
+                            <hr class="separador_admins">
+                            <div class="contenedor_info">
+                                <h5>{{ datosMovil.range }}</h5>
+                                <p>{{ datosMovil.gmail }}</p>
+                            </div>
+                            <hr class="separador_admins">
+                        </figure>
+                    </div>
+                </div>
+                <br>
+            </div>
     </section>
 </article>
