@@ -1,5 +1,5 @@
 <article class="estadistica active" data-page="estadistica">
-   
+
     <header>
         <h2 class="h2 article-title">Estadística</h2>
     </header>
@@ -7,17 +7,18 @@
     <section>
         <ul class="filter-list">
             <li class="filter-item">
-                <button [class.active]="selectedType === 'COMUNIDADES'"
-                    (click)="selectType('COMUNIDADES')"><h3>UNIDADES EDUCATIVAS </h3></button>
+                <button [class.active]="selectedType === 'COMUNIDADES'" (click)="selectType('COMUNIDADES')">
+                    <h3>UNIDADES EDUCATIVAS </h3>
+                </button>
             </li>
-                   </ul>
+        </ul>
     </section>
 
     <label class="filter-label">Filtrar por:</label>
     <div class="contenedor_filtro">
-        
+
         <div class="filter-container">
-            <label class="filter-label" for="filterSector">Sector</label>
+            <label class="filter-label" for="filterSector">Parroquia</label>
             <select class="filter-select" id="filterSector" #filterSectorSelect
                 (change)="filterBySector(filterSectorSelect.value)">
                 <option value="all">Todos</option>
@@ -51,16 +52,16 @@
                 <option value="all">Todos</option>
                 <option *ngFor="let month of mesCategoria" [value]="month.num">{{ month.name }}</option>
             </select>
-</div>
+        </div>
 
-        <div class="filter-container">
+        <!-- <div class="filter-container">
             <label class="filter-label" for="filterDay">Día</label>
             <select class="filter-select" id="filterDay" #filterDaySelect (change)="filterByDay(filterDaySelect.value)"
                 [disabled]="isDaySelectDisabled">
                 <option value="all">Todos</option>
                 <option *ngFor="let day of diaCategoria" [value]="day.num">{{ day.num }}</option>
             </select>
-        </div>
+        </div> -->
     </div>
 
     <div class="grafica1_estadistica">
