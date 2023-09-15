@@ -22,7 +22,7 @@ export class ComunidadComponent {
 
     //Organismos
     {
-      title: 'GAD - LUZ DE AMERICA',
+      title: 'GAD - Luz de América',
       sector: 'Luz de America',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/LuzDeAmerica/GadLuzDeAmerica.png',
@@ -67,7 +67,7 @@ export class ComunidadComponent {
     },
     //Escuelas
     {
-      title: 'Unidad Educativa "Luz de America"',
+      title: 'Unidad Educativa "Luz de América"',
       sector: 'Luz de America',
       category: 'Escuela',
       img: '../../assets/img/DirectorioComunidad/Escuelas/LuzAmerica.jpg',
@@ -106,7 +106,7 @@ export class ComunidadComponent {
       ubicacion: 'https://goo.gl/maps/rLetQZyVfoB6rGyt9'
     },
     {
-      title: 'GAD - PUERTO LIMÓN',
+      title: 'GAD - Puerto Limón',
       sector: 'Puerto Limón',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
@@ -132,10 +132,10 @@ export class ComunidadComponent {
       ubicacion: 'https://goo.gl/maps/P1oLpYqzQm35RTuL7'
     },
     {
-      title: 'GAD - EL ESFUERZO',
+      title: 'GAD - El Esfuerzo',
       sector: 'El Esfuerzo',
       category: 'Entidad Pública',
-      img: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/Logo_Gad_El_Esfuerzo.png',
+      img: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/Logo_Gad_El_Esfuerzo.png',
       atencion: '00:00am – 23:59pm',
       contacto: '022 233 283',
