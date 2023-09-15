@@ -1,0 +1,151 @@
+/* Estilos para el primer contenedor */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  /* Estilos para el contenedor dividido en tres partes proporcionales */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Alinea el contenido en altura */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 800px; /* Ancho máximo para controlar el tamaño en pantallas grandes */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Hace que los elementos se ajusten en filas si el espacio es insuficiente */
+  }
+  
+  /* Estilos para el título */
+  .title-container {
+    flex-basis: 100%;
+    text-align: center;
+    color: #333;
+    margin-top: 20px; /* Agregamos margen superior */
+    margin-bottom: 20px; /* Agregamos margen inferior */
+    font-size: 24px;    
+  }
+  
+  /* Estilos para el contenedor de la imagen */
+  .image-container {
+    flex-basis: 48%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* Agregamos margen arriba y abajo */
+  }
+  
+  .portadaInicio {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Altura del 100% para ocupar todo el espacio vertical */
+    object-fit: cover; /* Ajustar la imagen dentro del contenedor sin distorsionarla */
+  }
+  
+  /* Estilos para el contenedor del texto */
+  .text-container {
+    flex-basis: 48%;
+    text-align: justify;
+    color: #555;
+    margin: 20px 0; /* Agregamos margen arriba y abajo */
+
+  
+  }
+  .text-container p {
+    text-align: justify; /* Justifica el párrafo */
+    margin: 0; /* Elimina el margen predeterminado para que ocupe todo el ancho */
+  }
+  
+
+/* Estilos para el tercer contenedor original con cartas */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.iconos_stats {
+    width: 128px; /* Establecemos el ancho a 32px */
+    height: 128px; /* Establecemos la altura a 32px */
+    padding-bottom: 10px;
+    margin-left: 0;
+}
+
+.p_stats {
+    color: #3b3c3f;
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.h2_iconos {
+    text-align: left;
+    margin-left: 0;
+    padding-top: 50px;
+}
+
+
+/* Media queries para hacer el diseño responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        text-align: left;
+    }
+
+    .image-container,
+    .text-container {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+        margin-top: 10px; /* Agregamos margen entre contenedores en pantallas más pequeñas */
+    }
+
+    .card {
+        flex-basis: calc(50% - 20px);
+        margin-right: 10px; /* Agregamos margen derecho entre las cartas en pantallas más pequeñas */
+        margin-bottom: 20px; /* Agregamos margen inferior mayor entre las cartas en pantallas más pequeñas */
+    }
+
+    /* Estilos para el contenedor de imagen en pantallas pequeñas */
+    .image-container {
+        flex-basis: 100%; /* La imagen ocupa todo el ancho disponible en pantallas pequeñas */
+        border-radius: 10px; /* Añadir bordes redondeados a las esquinas de la imagen */
+        overflow: hidden; /* Evitar que la imagen se desborde en caso de ser muy grande */
+        display: block; /* Cambiamos a bloque para que la imagen ocupe todo el ancho */
+        margin-top: 20px; /* Agregamos margen entre la imagen y el texto en pantallas más pequeñas */
+    }
+
+    /* Estilos para el contenedor del texto en pantallas pequeñas */
+    .text-container {
+        flex-basis: 100%; /* El texto ocupa todo el ancho disponible en pantallas pequeñas */
+        text-align: justify;
+        color: #555;
+        margin-top: 20px; /* Agregamos margen superior entre la imagen y el texto en pantallas más pequeñas */
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .card {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+}
