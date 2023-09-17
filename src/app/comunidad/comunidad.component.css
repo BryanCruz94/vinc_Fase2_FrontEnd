@@ -1,9 +1,11 @@
+/* Estilos base para todos los dispositivos */
+
 .seleccionar_targeta {
     cursor: pointer;
 }
 
-.encabezado{
-    margin:0;
+.encabezado {
+    margin: 0;
     margin-bottom: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -113,23 +115,35 @@
 }
 
 @media (max-width: 801px) {
+    /* Estilos para tamaños de pantalla de hasta 801px (tablet y dispositivos móviles) */
+
     .popup {
-        max-width: 500px;
+        max-width: 90%; /* Cambia el ancho máximo para adaptarlo a pantallas más pequeñas */
+        padding: 10px; /* Ajusta el relleno */
+    }
+
+    .popup h2 {
+        font-size: 20px; /* Reduce el tamaño de fuente */
+    }
+
+    .popup p {
+        font-size: 14px; /* Reduce el tamaño de fuente */
+        margin-bottom: 8px; /* Reduce el margen inferior */
     }
 
     .contenedor_items_popup {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        gap: 10px; /* Reduce el espacio entre elementos */
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: center; /* Centra los elementos */
     }
 
     .contenedor_items_popup div {
-        width: 100%;
+        width: 100%; /* Establece el ancho completo para elementos en columnas */
     }
 
     .imagen_popup {
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 20px;
+        width: 100%; /* Ajusta el ancho de la imagen al 100% */
+        max-width: 100%; /* Cambia el ancho máximo */
+        margin-bottom: 10px; /* Reduce el margen inferior */
     }
 }
