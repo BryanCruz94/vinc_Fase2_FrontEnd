@@ -16,6 +16,12 @@ export class ConnectService {
 
   constructor(private http: HttpClient) { }
 
+  //MEOTODO DE PRUEBA DANNY
+  getIncidentes(){
+    const url = `${base_url}/grafica/incidentes`; // aqui va mi ruta
+    return this.http.get(url);
+  }
+
   cargarAnios() {
     const url = `${base_url}/grafica/anios`;
     return this.http.get<any>(url);
