@@ -146,4 +146,15 @@
         max-width: 100%; /* Cambia el ancho máximo */
         margin-bottom: 10px; /* Reduce el margen inferior */
     }
+    @media (max-width: 768px) {
+        .mobile-only {
+            display: block;
+        }
+    }
+    
+    @media (min-width: 769px) {
+        .mobile-only {
+            display: none;
+        }
+    }
 }
