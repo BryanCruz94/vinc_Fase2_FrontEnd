@@ -1,30 +1,10 @@
-import { Component,OnInit } from '@angular/core';
-import {ConnectService } from '../service/connect.service';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-estadistica-u',
   templateUrl: './estadistica-u.component.html',
   styleUrls: ['./estadistica-u.component.css']
 })
-export class EstadisticaUComponent implements OnInit{
-  public data: any= null;
+export class EstadisticaUComponent {
 
-  constructor (private service: ConnectService){}
-  ngOnInit(): void {
-    this.service.getIncidentes().subscribe(success=>
-      {
-        this.data = success;
-        
-      },
-      error=>{
-        console.log(error);
-        
-      }
-      );
-  }
-
-
-  
-  
 }

@@ -7,9 +7,7 @@ import { categoria } from '../interfaces/incidentes.interface';
   styleUrls: ['./comunidad.component.css']
 })
 export class ComunidadComponent {
- 
   popupData: any;
-
   selectedFilterValue = 'Entidad Pública';
   selectedSector = 'Luz de América';
 
@@ -156,11 +154,10 @@ export class ComunidadComponent {
   filterByCategoria(proyectos: categoria[], categoria: string, sector: string): categoria[] {
     return proyectos.filter(p => p.category === categoria && p.sector === sector);
   }
-  
+
   selectSector(sector: string): void {
     this.selectedSector = sector;
   }
-  
 
   // CONTROLAR LAS VENTANAS
   openPopup(categoria: any): void {
