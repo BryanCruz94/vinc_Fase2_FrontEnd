@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environmen';
-import { Transaction } from '../interfaces/incidentes.interface';
+import { Transaction, TransactionUE } from '../interfaces/incidentes.interface';
 
 const base_url = environment.base_url;
 
@@ -14,14 +14,16 @@ export class ConnectService {
   private filteredTransactionsSubject: BehaviorSubject<Transaction[]> = new BehaviorSubject<Transaction[]>([]);
   public filteredTransactions: Observable<Transaction[]> = this.filteredTransactionsSubject.asObservable();
 
+  private filteredTransactionsSubjectUE: BehaviorSubject<TransactionUE[]> = new BehaviorSubject<TransactionUE[]>([]);
+  public filteredTransactionsUE: Observable<TransactionUE[]> = this.filteredTransactionsSubjectUE.asObservable();
+
   constructor(private http: HttpClient) { }
 
-  //MEOTODO DE PRUEBA DANNY
-  getIncidentes(){
-    const url = `${base_url}/grafica/incidentes`; // aqui va mi ruta
-    return this.http.get(url);
-  }
 
+
+// *********************************************************************************************************************
+//                     METODOS FASE 1
+// *********************************************************************************************************************
   cargarAnios() {
     const url = `${base_url}/grafica/anios`;
     return this.http.get<any>(url);
@@ -81,5 +83,40 @@ export class ConnectService {
 
   setFilteredTransactions(transactions: Transaction[]): void {
     this.filteredTransactionsSubject.next([...transactions]); // Hacer una copia del arreglo de transacciones
+  }
+
+
+  // *********************************************************************************************************************
+  //                     METODOS FASE 2
+  // *********************************************************************************************************************
+  // PREGUNTAS ECU 911
+  cargarAnios_911_F2() {
+    const url = `${base_url}/grafica/anios_911_F2`;
+    return this.http.get<any>(url);
+  }
+
+  cargarAnios_UE_F2() {
+    const url = `${base_url}/grafica/anios_UE_F2`;
+    return this.http.get<any>(url);
+  }
+    
+  cargarSector_911_F2(): Observable<string[]> {
+    const url = `${base_url}/grafica/sectores_911_F2`;
+    return this.http.get<string[]>(url);
+  }
+
+  //cargar unidad educativa con paso de parámetro de sector a la url http://localhost:3000/grafica/unidadesEducativas?sector=El Esfuerzo
+  cargarUE_F2(sector: string): Observable<string[]> {
+    const url = `${base_url}/grafica/unidadesEducativas?sector=${sector}`;
+    return this.http.get<string[]>(url);
+  }
+
+  cargarTotalIncidentes_UE() {
+    const url = `${base_url}/grafica/incidentesUE_F2`;
+    return this.http.get<any>(url);
+  }
+
+  setFilteredTransactionsUE(transactions: TransactionUE[]): void {
+    this.filteredTransactionsSubjectUE.next([...transactions]); // Hacer una copia del arreglo de transacciones
   }
 }

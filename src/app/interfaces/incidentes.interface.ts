@@ -1,3 +1,4 @@
+// INTERFAZ ECU911
 export interface ResultObject {
     robo: number,
     emergenciaMedica: number,
@@ -41,3 +42,22 @@ export interface mes {
 export interface dia {
     num: string;
 }
+
+//INTERFAZ INCIDENTES UNIDADES EDUCATIVAS
+export interface ResultObject_UE {
+    robo: number,
+    acosoSexual: number,
+    bullyng: number,
+    alcoholDrogas: number,
+    violenciaPares: number,
+    otros: number,
+    sinIncidente: number,
+    total: number
+
+};
+
+export interface TransactionUE {
+    item: string;
+    cost: unknown;
+    year: string;
+};
