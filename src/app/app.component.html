@@ -101,7 +101,7 @@
             (click)="selectPage(pages[1])">Comunidad</button>
         </li>
         <li class="navbar-item">
-          <div class="navbar-link dropdown-button" (click)="toggleDropdown()">
+          <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()">
             Estadisticas
             <div class="dropdown-menu menu-drop" *ngIf="isDropdownVisible">
               <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica' }" (click)="selectPage(pages[2])">

@@ -1,17 +1,30 @@
-.link-drop {
-  color: rgb(255, 255, 255);
+.link-drop{
+  color:rgb(255, 255, 255);
   padding-left: 12px;
   font-size: 12px;
+}
+
+.link-drop {
+color: rgb(255, 255, 255);
+padding-left: 12px;
+font-size: 12px;
 
 }
 
-.menu-drop {
+.menu-drop{
   background-color: rgba(31, 80, 34, 0.906);
 }
+.menu-drop {
+background-color: rgba(31, 80, 34, 0.906);
+}
 
-.link-drop:hover {
+.link-drop:hover{
   background-color: #94CC8B;
-  color: rgb(36, 35, 35);
+  color:rgb(36, 35, 35);
+}
+.link-drop:hover {
+background-color: #94CC8B;
+color: rgb(36, 35, 35);
 }
 
 /* Estilos para las cartas */
@@ -34,12 +47,56 @@
   width: 50px;
   height: 50px;
   padding-bottom: 10px;
+display: flex;
+justify-content: space-between;
+gap: 20px;
+margin-top: 20px;
+}
+
+.card {
+flex: 1;
+background-color: white;
+padding: 20px;
+border-radius: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.iconos_stats {
+width: 50px;
+height: 50px;
+padding-bottom: 10px;
+}
+
+.p_stats {
+color: #778298;
+text-align: justify;
+padding-top: 10px;
+}
+
+.h2_iconos {
+margin-left: 100px;
+padding-top: 50px;
+font-size: 24px;
+font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+.navbar-link.dropdown-button {
+  cursor: pointer;
+  /* Cambiar el cursor a una mano para indicar que es interactivo */
+  padding: 10px;
+  /* Aumentar el espacio de clic para dispositivos táctiles */
+}
 }
 
 .p_stats {
   color: #778298;
   text-align: justify;
   padding-top: 10px;
+}
+.dropdown-menu {
+  position: relative;
+  /* Asegurar que el menú desplegable sea visible en dispositivos móviles */
 }
 
 .h2_iconos {
@@ -49,24 +106,11 @@
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar-link.dropdown-button {
-    cursor: pointer;
-    /* Cambiar el cursor a una mano para indicar que es interactivo */
-    padding: 10px;
-    /* Aumentar el espacio de clic para dispositivos táctiles */
-  }
-
-  .dropdown-menu {
-    position: relative;
-    /* Asegurar que el menú desplegable sea visible en dispositivos móviles */
-  }
-}
-
 /* Estilos CSS para tabletas */
 @media screen and (max-width: 1024px) {
-  .navbar-link.dropdown-button {
-    padding: 15px;
-    /* Aumentar el espacio de clic para tabletas */
-  }
+.navbar-link.dropdown-button {
+  padding: 15px;
+  /* Aumentar el espacio de clic para tabletas */
+}
+
 }
