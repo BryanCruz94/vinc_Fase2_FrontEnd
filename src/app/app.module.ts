@@ -26,6 +26,7 @@ import { Grafico2Component } from './estadistica/grafico2/grafico2.component';
 import * as CanvasJSAngularChart from '../assets/canvas/canvasjs.angular.component';
 import { EstadisticaUComponent } from './estadistica-u/estadistica-u.component';
 import { Grafico1F2Component } from './estadistica-u/grafico1-f2/grafico1-f2.component';
+import { Grafico2F2Component } from './estadistica-u/grafico2-f2/grafico2-f2.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
@@ -41,7 +42,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     Grafico2Component,
     CanvasJSChart,
     EstadisticaUComponent,
-    Grafico1F2Component
+    Grafico1F2Component,
+    Grafico2F2Component
   ],
   imports: [
     BrowserModule,
