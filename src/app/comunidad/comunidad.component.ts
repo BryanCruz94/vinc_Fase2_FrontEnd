@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { categoria } from '../interfaces/incidentes.interface';
 
 @Component({
@@ -6,12 +6,12 @@ import { categoria } from '../interfaces/incidentes.interface';
   templateUrl: './comunidad.component.html',
   styleUrls: ['./comunidad.component.css']
 })
-export class ComunidadComponent {
+export class ComunidadComponent implements OnInit { // Implementar OnInit
   popupData: any;
   selectedFilterValue = 'Entidad Pública';
-  selectedSector = 'Luz de América';
+  selectedSector = 'Luz de America';
 
-  categoria: categoria[] = [
+  categoria: categoria[] = [  
     // Categorías de ejemplo
 
     // *********************************************************************+
@@ -143,6 +143,10 @@ export class ComunidadComponent {
     },
     
   ];
+  ngOnInit(): void {
+    // Establecer el sector por defecto al cargar la página
+    this.selectedSector = 'Luz de America';
+  }
 
   selectFilterValue(value: string): void {
     this.selectedFilterValue = value;
