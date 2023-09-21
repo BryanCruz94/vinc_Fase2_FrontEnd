@@ -109,11 +109,33 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       sector: 'Puerto Limón',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.jpeg',
       atencion: '00:00am – 23:59pm',
       contacto: '(02) 385-6296',
       correo: 'info@puertolimon.gob.ec',
       ubicacion: 'https://goo.gl/maps/ZVavgPSgLGexqj5c6'
+    },
+    {
+      title: 'Ministerio de Salud Pública',
+      sector: 'Puerto Limón',
+      category: 'Entidad Pública',
+      img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.jpg',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/MSP/MSP.jpg',
+      atencion: '24 horas',
+      contacto: '(+593) 2-2381-4400 ext. 110, 1109',
+      correo: 'ventanillaunica.msp@msp.gob.ec',
+      ubicacion: 'https://goo.gl/maps/RYYiFo5Kkjr6UbB58'
+    },
+    {
+      title: 'Cuerpo de Bomberos',
+      sector: 'Puerto Limón',
+      category: 'Entidad Pública',
+      img: '../../assets/img/DirectorioComunidad/Organismos/Bomberos.jpg',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/CuerpoBomberos_PuertoLimon.jpeg',
+      atencion: 'Lunes a Viernes 8:00am -16:30pm',
+      contacto: '911 – 102',
+      correo: 'info@bpvm.gob.ec',
+      ubicacion: 'https://goo.gl/maps/v9kNgeRwV59yi5cQ7'
     },
 // *********************************************************************+
     //                      SECTOR EL ESFUERZO
@@ -135,12 +157,35 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       sector: 'El Esfuerzo',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/Logo_Gad_El_Esfuerzo.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
       atencion: '00:00am – 23:59pm',
       contacto: '022 233 283',
       correo: 'dnpolco.servicios@gmail.com',
       ubicacion: 'https://goo.gl/maps/fzFyUXTvZGEezhL3A'
     },
+    {
+      title: 'UPC',
+      sector: 'El Esfuerzo',
+      category: 'Entidad Pública',
+      img: '../../assets/img/DirectorioComunidad/Organismos/PoliciaNacional.jpg',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/UPC_ElEsfuerzo.jpeg',
+      atencion: '00:00am – 23:59pm',
+      contacto: '022 233 283',
+      correo: 'dnpolco.servicios@gmail.com',
+      ubicacion: 'https://goo.gl/maps/fzFyUXTvZGEezhL3A'
+    },
+    {
+      title: 'Ministerio de Salud Pública',
+      sector: 'El Esfuerzo',
+      category: 'Entidad Pública',
+      img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.jpg',
+
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/MSP_ElEsfuerzo.jpeg',
+      atencion: '24 horas',
+      contacto: '(+593) 2-2381-4400 ext. 110, 1109',
+      correo: 'ventanillaunica.msp@msp.gob.ec',
+      ubicacion: 'https://goo.gl/maps/RYYiFo5Kkjr6UbB58'
+    }
     
   ];
   ngOnInit(): void {
