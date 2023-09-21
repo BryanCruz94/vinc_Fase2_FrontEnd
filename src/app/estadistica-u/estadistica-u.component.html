@@ -46,30 +46,30 @@
 
         <div class="grafica1_estadistica">
             <div class="tabla-estadistica">
-                <div class="grafica1_estadistica">
-                    <div class="tabla-estadistica">
-                        <!-- <table mat-table [dataSource]="filteredTransactionsUE" class="mat-elevation-z8 tamaño-tabla">
-                
-                            <ng-container matColumnDef="item">
-                                <th mat-header-cell *matHeaderCellDef> Incidentes </th>
-                                <td mat-cell *matCellDef="let transactionUE"> {{ transactionUE.item }} </td>
-                            </ng-container>
-                            
-                            <ng-container matColumnDef="cost">
-                                <th mat-header-cell *matHeaderCellDef> Cont </th>
-                                <td mat-cell *matCellDef="let transactionUE"> {{ transactionUE.cost }} </td>
-                            </ng-container> 
-                            
-                            
-                            <tr mat-header-row *matHeaderRowDef="displayedColumnsUE"></tr>
-                            <tr mat-row class="tabla-fila" *matRowDef="let row; columns: displayedColumnsUE;"></tr>
-                            <tr mat-footer-row *matFooterRowDef="displayedColumnsUE"></tr>
-                
-                        </table> -->
-                    </div>
-                </div>
-                
+                <table mat-table [dataSource]="filteredTransactionsUE" class="mat-elevation-z8 tamaño-tabla">
+                    <!-- Item Column -->
+                    <ng-container matColumnDef="item">
+                        <th mat-header-cell *matHeaderCellDef> Incidentes </th>
+                        <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
+                        <td mat-footer-cell *matFooterCellDef> Total </td>
+                    </ng-container>
+                    <!-- Cost Column -->
+                    <ng-container matColumnDef="cost">
+                        <th mat-header-cell *matHeaderCellDef> Cont </th>
+                        <td mat-cell *matCellDef="let transaction"> {{transaction.cost}} </td>
+                        <td mat-footer-cell *matFooterCellDef> {{totalCosto()}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumnsUE"></tr>
+                    <tr mat-row class="tabla-fila" *matRowDef="let row; columns: displayedColumnsUE;"></tr>
+                    <tr mat-footer-row *matFooterRowDef="displayedColumnsUE"></tr>
+                </table>
             </div>
+    
+            <!-- <div class="grafico_linea_estadistica">
+                <div class="card">
+                    <app-grafico1 [transactions]="filteredTransactions"></app-grafico1>
+                </div>
+            </div> -->
         </div>
     </div>
 

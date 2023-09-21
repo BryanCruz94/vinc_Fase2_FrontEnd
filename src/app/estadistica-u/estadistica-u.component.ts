@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ConnectService } from 'src/app/service/connect.service';
-import { ResultObject_UE, mes, dia, TransactionUE } from '../interfaces/incidentes.interface';
+import { ResultObject_UE, mes, dia, TransactionUE, Transaction } from '../interfaces/incidentes.interface';
 
 @Component({
   selector: 'app-estadistica-u',
@@ -14,6 +14,7 @@ export class EstadisticaUComponent implements OnInit {
   sectors: string[] = [];
   colleges: string[] = [];
   yearsUE: string[] = [];
+  total: number = 0;
 
   // VARIABLES PARA FILTROS
   selectedSectorUE: string = 'all'; // Agregar propiedad para el sector seleccionado
@@ -56,9 +57,9 @@ export class EstadisticaUComponent implements OnInit {
 
   //VARIABLES PARA GRAFICOS
   displayedColumnsUE: string[] = ['item', 'cost'];
-  transactionsUE: TransactionUE[] = [];
+  transactionsUE: Transaction[] = [];
   
-  filteredTransactionsUE: TransactionUE[] = [];
+  filteredTransactionsUE: Transaction[] = [];
   
   
   
@@ -78,6 +79,7 @@ export class EstadisticaUComponent implements OnInit {
   inicializarDatos() {
     this.connectService.cargarTotalIncidentes_UE().subscribe((data: any) => {
       this.dataIncidentesUE = data;
+      this.total = this.dataIncidentesUE.total;
       
       const currentYear = new Date().getFullYear().toString();
       this.transactionsUE = [
@@ -96,6 +98,11 @@ export class EstadisticaUComponent implements OnInit {
       
     }
   )}
+
+  totalCosto(){
+    return this.total
+
+  }
 
 
   // FILTRO POR SECTOR
