@@ -119,4 +119,26 @@ export class ConnectService {
   setFilteredTransactionsUE(transactions: TransactionUE[]): void {
     this.filteredTransactionsSubjectUE.next([...transactions]); // Hacer una copia del arreglo de transacciones
   }
+
+  cargarTotalIncidentesPorSectorUE(sector: string) {
+    const url = `${base_url}/grafica/incidentesPorSector_UE_F2?sector=${sector}`;
+    return this.http.get<any>(url);
+  }
+
+  cargaInvidentesPorSectorAndUe_UE_F2(sector: string, ue: string) {
+    const url = `${base_url}/grafica/incidentesPorSectorYuE_UE_F2?sector=${sector}&ue=${ue}`;
+    console.log('la url es',url);
+    return this.http.get<any>(url);
+  }
+
+  cargarIncidentesPorSectorYUeYAnio_UE_F2(sector: string, ue: string,year: string) {
+    const url = `${base_url}/grafica/incidentesPorSectorYuEYAnio_UE_F2?sector=${sector}&ue=${ue}&year=${year}`;
+    return this.http.get<any>(url);
+  }
+
+  cargarIncidentesPorSectorYUeYAnioYMes_UE_F2(sector: string, ue: string,year: string, month: string) {
+    const url = `${base_url}/grafica/incidentesPorSectorYuEYAnioYMes_UE_F2?sector=${sector}&ue=${ue}&year=${year}&month=${month}`;
+    console.log('la url es',url);
+    return this.http.get<any>(url);
+  }
 }

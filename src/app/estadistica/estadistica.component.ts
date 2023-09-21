@@ -3,7 +3,7 @@ import { ConnectService } from 'src/app/service/connect.service';
 import { ResultObject, Transaction, mes, dia } from '../interfaces/incidentes.interface';
 
 @Component({
-  selector: 'app-estadistica',
+  selector: 'app-estadistica', 
   templateUrl: './estadistica.component.html',
   styleUrls: ['./estadistica.component.css']
 })

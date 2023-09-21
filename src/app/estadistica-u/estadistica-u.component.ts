@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ConnectService } from 'src/app/service/connect.service';
-import { ResultObject_UE, mes, dia, TransactionUE, Transaction } from '../interfaces/incidentes.interface';
+import { ResultObject_UE, mes, Transaction } from '../interfaces/incidentes.interface';
 
 @Component({
   selector: 'app-estadistica-u',
@@ -8,25 +8,12 @@ import { ResultObject_UE, mes, dia, TransactionUE, Transaction } from '../interf
   styleUrls: ['./estadistica-u.component.css']
 })
 export class EstadisticaUComponent implements OnInit {
- // @ViewChild('filterDaySelect') filterDaySelect!: ElementRef<HTMLSelectElement>;
+  @ViewChild('filterDaySelect') filterDaySelect!: ElementRef<HTMLSelectElement>;
 
   // VARIABLES
   sectors: string[] = [];
   colleges: string[] = [];
   yearsUE: string[] = [];
-  total: number = 0;
-
-  // VARIABLES PARA FILTROS
-  selectedSectorUE: string = 'all'; // Agregar propiedad para el sector seleccionado
-  selectedCollegeUE: string = 'all'; // Agregar propiedad para la unidad educativa seleccionada
-  selectedYearUE: string = 'all'; // Agregar propiedad para el año seleccionado
-  selectedMonthUE: string = 'all'; // Agregar propiedad para el mes seleccionado
-  
-  // VARIABLES PARA HABILITAR/DESHABILITAR FILTROS
-  isMonthSelectDisabled: boolean = true; // Controla la habilitación/deshabilitación del filtro de meses
-  isCollegeSelectDisabled: boolean = true; // Controla la habilitación/deshabilitación del filtro de unidades educativas
-
-  // MESES PARA FILTROS
   monthUE: mes[] = [
     { name: "Enero", num: "01" },
     { name: "Febrero", num: "02" },
@@ -41,6 +28,22 @@ export class EstadisticaUComponent implements OnInit {
     { name: "Noviembre", num: "11" },
     { name: "Diciembre", num: "12" }
   ];
+  monthUEString: string[] = this.monthUE.map((month) => month.name);
+  total: number = 0;
+
+  // VARIABLES PARA FILTROS
+  selectedSectorUE: string = 'all'; // Agregar propiedad para el sector seleccionado
+  selectedCollegeUE: string = 'all'; // Agregar propiedad para la unidad educativa seleccionada
+  selectedYearUE: string = 'all'; // Agregar propiedad para el año seleccionado
+  selectedMonthUE: string = 'all'; // Agregar propiedad para el mes seleccionado
+  
+  // VARIABLES PARA HABILITAR/DESHABILITAR FILTROS
+  isMonthSelectDisabled: boolean = true; // Controla la habilitación/deshabilitación del filtro de meses
+  isCollegeSelectDisabled: boolean = true; // Controla la habilitación/deshabilitación del filtro de unidades educativas
+
+  // MESES PARA FILTROS
+  
+
 
   //ESTRUCTURA DE DATOS
   dataIncidentesUE: ResultObject_UE = {
@@ -52,6 +55,17 @@ export class EstadisticaUComponent implements OnInit {
     otros: 0,
     sinIncidente: 0,
     total: 0
+  };
+
+  labelMappings: { [key: string]: string } = {
+    robo: 'Robos',
+    acosoSexual: 'Acoso Sexual',
+    bullyng: 'Bullying',
+    alcoholDrogas: 'Alcohol y Drogas',
+    violenciaPares: 'Violencia entre Pares',
+    otros: 'Otros',
+    sinIncidente: 'Sin Incidente',
+    
   };
 
 
@@ -85,12 +99,11 @@ export class EstadisticaUComponent implements OnInit {
       this.transactionsUE = [
         { item: 'Robo', cost: this.dataIncidentesUE.robo , year:currentYear },
         { item: 'Acoso Sexual', cost: this.dataIncidentesUE.acosoSexual , year:currentYear},
-        { item: 'Bullyng', cost: this.dataIncidentesUE.bullyng , year:currentYear},
+        { item: 'Bullying', cost: this.dataIncidentesUE.bullyng , year:currentYear},
         { item: 'Alcohol y Drogas', cost: this.dataIncidentesUE.alcoholDrogas , year:currentYear},
         { item: 'Violencia entre Pares', cost: this.dataIncidentesUE.violenciaPares, year:currentYear },
         { item: 'Otros', cost: this.dataIncidentesUE.otros , year:currentYear},
         { item: 'Sin Incidente', cost: this.dataIncidentesUE.sinIncidente , year:currentYear},
-        { item: 'Total', cost: this.dataIncidentesUE.total, year:currentYear }
       ];
 
       this.filteredTransactionsUE = [...this.transactionsUE];
@@ -101,30 +114,111 @@ export class EstadisticaUComponent implements OnInit {
 
   totalCosto(){
     return this.total
-
   }
+
 
 
   // FILTRO POR SECTOR
-  filterBySector(sectorValue: string) {
-    console.log(`Filtrar por sector: ${sectorValue}`);
-    this.getUE911F2(sectorValue);
+  filterBySector(selectedSector: string) {
+    console.log(`Filtrar por sector: ${selectedSector}`);
+    this.isCollegeSelectDisabled= false;
+    this.selectedSectorUE = selectedSector;
+    this.getUE911F2(selectedSector);
+  
+    if (selectedSector === 'all') {
+      this.isCollegeSelectDisabled= true;
+      this.filteredTransactionsUE = [...this.transactionsUE];
+      this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+    } else {
+      this.connectService.cargarTotalIncidentesPorSectorUE(selectedSector).subscribe((res: any) => {
+        this.total = res.total;
+        const filteredItems = Object.entries(res)
+          .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
+          .map(([item, cost]) => ({
+            item: this.labelMappings[item.toString()] || item,
+            cost,
+            year: selectedSector
+          }));
+  
+        this.filteredTransactionsUE = filteredItems;
+        this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+      });
+    }
+  }
+  
+
+  // FILTRO POR SECTOR Y UNIDAD EDUCATIVA
+  filterByCollegeUE(selectedCollegeUE:string) {
+    console.log(`Filtrar por unidad educativa: ${selectedCollegeUE}`);
+    this.selectedCollegeUE = selectedCollegeUE;
+    if (selectedCollegeUE === 'all') {
+      this.filteredTransactionsUE = [...this.transactionsUE];
+      this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+    } else {
+      this.connectService.cargaInvidentesPorSectorAndUe_UE_F2(this.selectedSectorUE,this.selectedCollegeUE).subscribe((res: any) => {
+        this.total = res.total;
+        const filteredItems = Object.entries(res)
+          .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
+          .map(([item, cost]) => ({
+            item: this.labelMappings[item.toString()] || item,
+            cost,
+            year: selectedCollegeUE
+          }));
+  
+        this.filteredTransactionsUE = filteredItems;
+        this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+      });
+    }
   }
 
-  // FILTRO POR UNIDAD EDUCATIVA
-  filterByCollege(collegeValue: string) {
-    console.log(`Filtrar por unidad educativa: ${collegeValue}`);
-  }
-
-  //FILTRO POR AÑO
+  //FILTRO POR SECTOR, UNIDAD EDUCATIVA Y AÑO
   filterByYearUE(yearValue: string) {
     console.log(`Filtrar por año: ${yearValue}`);
     this.isMonthSelectDisabled= false;
+    this.selectedYearUE = yearValue;
+    if (yearValue === 'all') {
+      this.isMonthSelectDisabled= true;
+      this.filteredTransactionsUE = [...this.transactionsUE];
+      this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+    }else{
+      this.connectService.cargarIncidentesPorSectorYUeYAnio_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,yearValue).subscribe((res: any) => {
+        this.total = res.total;
+        const filteredItems = Object.entries(res)
+          .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
+          .map(([item, cost]) => ({
+            item: this.labelMappings[item.toString()] || item,
+            cost,
+            year: yearValue
+          }));
+  
+        this.filteredTransactionsUE = filteredItems;
+        this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+      });
+    }
   }
 
-  // FILTRO POR MES
+  // FILTRO POR SECTOR, UNIDAD EDUCATIVA, AÑO Y MES
   filterByMonthUE(monthValue: string) {
     console.log(`Filtrar por mes: ${monthValue}`);
+    this.selectedMonthUE = monthValue;
+    if (monthValue === 'all') {
+      this.filteredTransactionsUE = [...this.transactionsUE];
+      this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+    }else{
+      this.connectService.cargarIncidentesPorSectorYUeYAnioYMes_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,this.selectedYearUE,monthValue).subscribe((res: any) => {
+        this.total = res.total;
+        const filteredItems = Object.entries(res)
+          .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
+          .map(([item, cost]) => ({
+            item: this.labelMappings[item.toString()] || item,
+            cost,
+            year: monthValue
+          }));
+  
+        this.filteredTransactionsUE = filteredItems;
+        this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
+      });
+    }
   }
 
   //OBTIENE SECTOR
@@ -151,6 +245,8 @@ export class EstadisticaUComponent implements OnInit {
       console.log(data);
     });
   }
+
+
 
 }
 
