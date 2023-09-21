@@ -101,7 +101,8 @@
             (click)="selectPage(pages[1])">Comunidad</button>
         </li>
         <li class="navbar-item">
-          <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()">            Estadisticas
+          <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()"> 
+            Estadisticas
             <div class="dropdown-menu menu-drop" *ngIf="isDropdownVisible">
               <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica' }" (click)="selectPage(pages[2])">
               Comunidades
@@ -171,4 +172,20 @@
       <app-nosotros></app-nosotros>
     </ng-container>
   </div>
+
+  <script>
+    $(document).ready(function() {
+  // Función para mostrar el menú desplegable al hacer clic en el botón de estadísticas
+  $('.navbar-link.dropdown-button').on('click', function() {
+    $('.dropdown-menu').toggleClass('active');
+    
+    // Cambiar el ícono de acuerdo al estado del menú
+    if ($('.dropdown-menu').hasClass('active')) {
+      $(this).find('ion-icon').css('transform', 'rotate(180deg)');
+    } else {
+      $(this).find('ion-icon').css('transform', 'rotate(0deg)');
+    }
+  });
+});
+  </script>
 </main>

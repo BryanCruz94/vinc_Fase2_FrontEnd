@@ -1,18 +1,22 @@
+/* Estilos para los enlaces */
 .link-drop {
   color: rgb(255, 255, 255);
   padding-left: 12px;
   font-size: 12px;
-
 }
+
+/* Estilos para el menú desplegable */
 .menu-drop {
   background-color: rgba(31, 80, 34, 0.906);
 }
 
+/* Estilos para el enlace al hacer hover */
 .link-drop:hover {
   background-color: #94CC8B;
   color: rgb(36, 35, 35);
 }
 
+/* Estilos para contenedores de tarjetas */
 .card-container {
   display: flex;
   justify-content: space-between;
@@ -20,6 +24,7 @@
   margin-top: 20px;
 }
 
+/* Estilos para las tarjetas */
 .card {
   flex: 1;
   background-color: white;
@@ -28,18 +33,21 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para iconos de estadísticas */
 .iconos_stats {
   width: 50px;
   height: 50px;
   padding-bottom: 10px;
 }
 
+/* Estilos para párrafos de estadísticas */
 .p_stats {
   color: #778298;
   text-align: justify;
   padding-top: 10px;
 }
 
+/* Estilos para encabezados de iconos */
 .h2_iconos {
   margin-left: 100px;
   padding-top: 50px;
@@ -47,24 +55,38 @@
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
+/* Estilos CSS para dispositivos móviles y tablets */
+@media screen and (max-width: 1024px) {
   .navbar-link.dropdown-button {
     cursor: pointer;
-    /* Cambiar el cursor a una mano para indicar que es interactivo */
     padding: 10px;
-    /* Aumentar el espacio de clic para dispositivos táctiles */
+    position: relative; /* Añadimos posición relativa para el contenedor del botón */
   }
 
   .dropdown-menu {
-    position: relative;
-    /* Asegurar que el menú desplegable sea visible en dispositivos móviles */
+    position: absolute;
+    top: auto;
+    bottom: 100%; /* Coloca el menú desplegable hacia arriba */
+    left: 0;
+    display: none;
+    background-color: rgba(31, 80, 34, 0.906);
+    border-radius: 5px;
+    z-index: 1; /* Asegura que el menú esté sobre otros elementos */
   }
 
-  /* Estilos CSS para tabletas */
-@media screen and (max-width: 1024px) {
-  .navbar-link.dropdown-button {
-    padding: 15px;
-    /* Aumentar el espacio de clic para tabletas */
+  .navbar-link.dropdown-button.active + .dropdown-menu {
+    display: block;
   }
-}
+
+  /* Estilo adicional para el ícono de despliegue en dispositivos móviles y tablets */
+  .dropdown-button ion-icon {
+    margin-left: 10px;
+    transition: transform 0.3s;
+    transform: rotate(0deg); /* Inicialmente, el ícono no está rotado */
+  }
+
+  /* Rotar el ícono hacia arriba cuando el menú desplegable está activo */
+  .navbar-link.dropdown-button.active + .dropdown-menu + ion-icon {
+    transform: rotate(180deg);
+  }
 }
