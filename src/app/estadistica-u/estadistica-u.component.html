@@ -68,9 +68,17 @@
         </div>
 
         <div class="grafico_linea_estadistica">
-            
+            <div class="card">
+                <!-- <app-grafico1 [transactions]="filteredTransactions"></app-grafico1> -->
+                <app-grafico1-f2 [transactions]="filteredTransactionsUE"></app-grafico1-f2>
+            </div>
         </div>
     </div>
 
+    <!-- SEGUNDO GRÁFICO -->
+    <div class="grafico_lineal">
+        <app-grafico2-f2></app-grafico2-f2>
+    </div>
+    
 
 </article>
