@@ -3,87 +3,83 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
 
-  }
-  
-  /* Estilos para el contenedor dividido en tres partes proporcionales */
-  .content {
+/* Estilos para el contenedor dividido en tres partes proporcionales */
+.content {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* Alinea el contenido en altura */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 800px; /* Ancho máximo para controlar el tamaño en pantallas grandes */
-    margin-top: 20px;
-    flex-wrap: wrap; /* Hace que los elementos se ajusten en filas si el espacio es insuficiente */
-  }
-  
-  /* Estilos para el título */
-  .title-container {
+    align-items: stretch;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para el título */
+.title-container {
     flex-basis: 100%;
     text-align: center;
     color: #333;
-    margin-top: 20px; /* Agregamos margen superior */
-    margin-bottom: 20px; /* Agregamos margen inferior */
-    font-size: 24px;    
-  }
-  
-  /* Estilos para el contenedor de la imagen */
-  .image-container {
-    flex-basis: 48%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Estilos para el contenedor de la imagen y el texto */
+.image-container,
+.text-container {
+    flex-basis: calc(50% - 10px); /* Dividimos en 2 columnas con un espacio de 10px entre ellas */
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0; /* Agregamos margen arriba y abajo */
-  }
-  
-  .portadaInicio {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: 100%; /* Altura del 100% para ocupar todo el espacio vertical */
-    object-fit: cover; /* Ajustar la imagen dentro del contenedor sin distorsionarla */
-  }
-  
-  /* Estilos para el contenedor del texto */
-  .text-container {
-    flex-basis: 48%;
+}
+
+.portadaInicio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para el contenedor del texto */
+.text-container {
     text-align: justify;
     color: #555;
-    margin: 20px 0; /* Agregamos margen arriba y abajo */
+}
 
-  
-  }
-  .text-container p {
-    text-align: justify; /* Justifica el párrafo */
-    margin: 0; /* Elimina el margen predeterminado para que ocupe todo el ancho */
-  }
-  
+.text-container p {
+    text-align: justify;
+    margin: 0;
+}
 
 /* Estilos para el tercer contenedor original con cartas */
 .card-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: flex-start; /* Alinea las cartas en la parte superior en lugar de estirarlas */
     margin-top: 20px;
 }
 
 .card {
-    flex: 1;
+    flex-basis: calc(33.33% - 10px); /* Dividimos en 3 columnas con un espacio de 10px entre ellas */
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
-    margin: 0 10px;
+    margin: 0 5px; /* Reducimos el margen horizontal para evitar el desorden */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 .iconos_stats {
-    width: 128px; /* Establecemos el ancho a 32px */
-    height: 128px; /* Establecemos la altura a 32px */
+    width: 128px;
+    height: 128px;
     padding-bottom: 10px;
     margin-left: 0;
 }
@@ -102,50 +98,66 @@
 
 
 /* Media queries para hacer el diseño responsive */
+/* Media query para hacer el diseño responsive en iPads y dispositivos similares */
+/* Media query para hacer el diseño responsive en iPads y dispositivos similares */
 @media screen and (max-width: 768px) {
     .container {
         text-align: left;
     }
 
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .image-container,
     .text-container {
-        width: 100%;
+        flex-basis: 100%;
     }
 
     .card-container {
         flex-wrap: wrap;
-        margin-top: 10px; /* Agregamos margen entre contenedores en pantallas más pequeñas */
+        margin-top: 20px;
     }
 
     .card {
-        flex-basis: calc(50% - 20px);
-        margin-right: 10px; /* Agregamos margen derecho entre las cartas en pantallas más pequeñas */
-        margin-bottom: 20px; /* Agregamos margen inferior mayor entre las cartas en pantallas más pequeñas */
+        flex-basis: 100%; /* Las cartas ocuparán todo el ancho */
+        margin-right: 0; /* Sin margen derecho */
+        margin-bottom: 20px;
     }
 
-    /* Estilos para el contenedor de imagen en pantallas pequeñas */
     .image-container {
-        flex-basis: 100%; /* La imagen ocupa todo el ancho disponible en pantallas pequeñas */
-        border-radius: 10px; /* Añadir bordes redondeados a las esquinas de la imagen */
-        overflow: hidden; /* Evitar que la imagen se desborde en caso de ser muy grande */
-        display: block; /* Cambiamos a bloque para que la imagen ocupe todo el ancho */
-        margin-top: 20px; /* Agregamos margen entre la imagen y el texto en pantallas más pequeñas */
+        flex-basis: 100%;
+        margin-top: 20px;
     }
 
-    /* Estilos para el contenedor del texto en pantallas pequeñas */
     .text-container {
-        flex-basis: 100%; /* El texto ocupa todo el ancho disponible en pantallas pequeñas */
-        text-align: justify;
-        color: #555;
-        margin-top: 20px; /* Agregamos margen superior entre la imagen y el texto en pantallas más pequeñas */
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
+    .title-container {
+        flex-basis: 100%;
+    }
+    
+    .title-container img {
+        display: block;
+        margin: 0 auto;
     }
 }
 
+/* Estilos para las imágenes de iconos stats */
+.iconos_stats {
+    width: 100px !important;
+    height: 100px !important;
+}
 
 
+/* Media query para hacer el diseño responsive en dispositivos móviles */
 @media screen and (max-width: 480px) {
     .card {
-        flex-basis: 100%;
-        margin-right: 0;
+        flex-basis: 100%; /* Las cartas ocuparán todo el ancho */
+        margin-right: 0; /* Sin margen derecho */
+        margin-bottom: 20px;
     }
 }
