@@ -96,8 +96,8 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       title: 'Unidad Educativa "PUERTO LIMÓN"',
       sector: 'Puerto Limón',
       category: 'Escuela',
-      img: '../../assets/img/DirectorioComunidad/Escuelas/PtoLimon/EscuelaPuertoLimon.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/PtoLimon/PopUp_PuertoLimon.png',
+      img: '../../assets/img/DirectorioComunidad/Escuelas/PuertoLimon/EscuelaPuertoLimon.png',
+      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/PuertoLimon/PopUp_PuertoLimon.png',
   
       atencion: 'Lunes a Viernes',
       contacto: '593-2-396-1300',
