@@ -144,6 +144,18 @@
         display: block;
         margin: 0 auto;
     }
+    .filter-list.encabezado {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    .filter-list.encabezado li {
+        flex-basis: calc(33.33% - 10px);
+        margin-bottom: 10px;
+    }
 }
 
 /* Estilos para las imágenes de iconos stats */

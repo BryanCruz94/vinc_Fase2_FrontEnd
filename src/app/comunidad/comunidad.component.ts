@@ -97,11 +97,12 @@ export class ComunidadComponent {
       sector: 'Puerto Limón',
       category: 'Escuela',
       img: '../../assets/img/DirectorioComunidad/Escuelas/PtoLimon/EscuelaPuertoLimon.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/TreceAbril/foto1.jpg',
-      atencion: 'Lunes a Viernes de puerto limon pm',
-      contacto: '02 272 2109',
-      correo: 'escuelatrecedeabril@gmail.com',
-      ubicacion: 'https://goo.gl/maps/rLetQZyVfoB6rGyt9'
+      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/PtoLimon/PopUp_PuertoLimon.png',
+  
+      atencion: 'Lunes a Viernes',
+      contacto: '593-2-396-1300',
+      correo: 'xxxx',
+      ubicacion: 'https://maps.app.goo.gl/ME1e4hvXTbYthM7V7?g_st=ic'
     },
     {
       title: 'GAD - Puerto Limón',
@@ -123,9 +124,9 @@ export class ComunidadComponent {
       sector: 'El Esfuerzo',
       category: 'Escuela',
       img: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/EscuelaElEsfuerzo.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/EscuelaElEsfuerzo.png',
-      atencion: 'Lunes a Viernes de puerto limon pm',
-      contacto: '02 272 2109',
+      imgPop: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/PopUp_ElEsfuerzo.jpg',
+      atencion: 'Lunes a Viernes',
+      contacto: '02 384 0105',
       correo: 'escuelatrecedeabril@gmail.com',
       ubicacion: 'https://goo.gl/maps/P1oLpYqzQm35RTuL7'
     },

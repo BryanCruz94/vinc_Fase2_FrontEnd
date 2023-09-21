@@ -114,47 +114,72 @@
     border-radius: 5px;
 }
 
-@media (max-width: 801px) {
-    /* Estilos para tamaños de pantalla de hasta 801px (tablet y dispositivos móviles) */
-
-    .popup {
-        max-width: 90%; /* Cambia el ancho máximo para adaptarlo a pantallas más pequeñas */
-        padding: 10px; /* Ajusta el relleno */
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .filter-list.encabezado {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 5px 0; /* Reducido el margen superior e inferior */
+        padding: 0;
+        overflow-x: auto;
     }
 
-    .popup h2 {
-        font-size: 20px; /* Reduce el tamaño de fuente */
+    .filter-list.encabezado li {
+        flex-basis: auto;
+        margin-bottom: 0;
     }
 
-    .popup p {
-        font-size: 14px; /* Reduce el tamaño de fuente */
-        margin-bottom: 8px; /* Reduce el margen inferior */
+    .filter-list {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        justify-content: flex-start;
     }
 
-    .contenedor_items_popup {
-        gap: 10px; /* Reduce el espacio entre elementos */
-        flex-direction: column; /* Cambia la dirección del flexbox a columna */
-        align-items: center; /* Centra los elementos */
+    .filter-list li {
+        margin-bottom: 10px;
     }
 
-    .contenedor_items_popup div {
-        width: 100%; /* Establece el ancho completo para elementos en columnas */
+    .filter-list button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 2.2vw; /* Tamaño de fuente más pequeño */
+        color: #333;
+        padding: 5px 10px; /* Espaciado interno ajustado */
+        transition: color 0.3s;
+        max-width: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .filter-list button:hover {
+        color: #4CAF50; /* Cambio de color al pasar el mouse a verde (#4CAF50) */
+    }
+
+    .filter-list button.active {
+        color: #4CAF50; /* Color verde para el elemento seleccionado */
+    }
+    .contenedor_item2 {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra verticalmente */
+        text-align: center; /* Centra horizontalmente */
     }
 
     .imagen_popup {
-        width: 100%; /* Ajusta el ancho de la imagen al 100% */
-        max-width: 100%; /* Cambia el ancho máximo */
-        margin-bottom: 10px; /* Reduce el margen inferior */
+        max-width: 100%;
+        height: auto;
     }
-    @media (max-width: 768px) {
-        .mobile-only {
-            display: block;
-        }
-    }
-    
-    @media (min-width: 769px) {
-        .mobile-only {
-            display: none;
-        }
-    }
+
+
+}
+
+/* Agrega estilos para iPads en orientación vertical */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aquí puedes aplicar estilos específicos para iPads en orientación vertical si es necesario */
 }
