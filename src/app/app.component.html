@@ -5,7 +5,8 @@
   <!--
       - #SIDEBAR
     -->
-    <aside class="sidebar" [ngClass]="{ 'active': isSidebarActive }" data-sidebar>
+  <aside class="sidebar" [ngClass]="{ 'active': isSidebarActive }" data-sidebar>
+
     <div class="sidebar-info">
       <figure class="avatar-box my-avatar">
         <img src="../assets/img/logos/SE.svg" alt="Logo SE" width="80">
@@ -101,19 +102,21 @@
             (click)="selectPage(pages[1])">Comunidad</button>
         </li>
         <li class="navbar-item">
-          <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()"> 
+          <div class="navbar-link dropdown-button" (mouseenter)="toggleDropdown()" (mouseleave)="hideDropdown()">
             Estadisticas
-            <div class="dropdown-menu menu-drop" *ngIf="isDropdownVisible">
-              <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica' }" (click)="selectPage(pages[2])">
-              Comunidades
+            <div class="dropdown-menu menu-drop" *ngIf="isDropdownVisible" #dropdownMenu>
+              <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica' }"
+                (click)="selectPage(pages[2]); handleDropdownOptionClick();">
+                Comunidades
               </button>
-              <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica-u' }" (click)="selectPage(pages[3])">
+              <button class="dropdown-item link-drop" [ngClass]="{ 'active': currentPage === 'estadistica-u' }"
+                (click)="selectPage(pages[3]); handleDropdownOptionClick();">
                 Unidades Educativas
               </button>
             </div>
           </div>
         </li>
-        
+
 
 
 
@@ -173,19 +176,4 @@
     </ng-container>
   </div>
 
-  <script>
-    $(document).ready(function() {
-  // Función para mostrar el menú desplegable al hacer clic en el botón de estadísticas
-  $('.navbar-link.dropdown-button').on('click', function() {
-    $('.dropdown-menu').toggleClass('active');
-    
-    // Cambiar el ícono de acuerdo al estado del menú
-    if ($('.dropdown-menu').hasClass('active')) {
-      $(this).find('ion-icon').css('transform', 'rotate(180deg)');
-    } else {
-      $(this).find('ion-icon').css('transform', 'rotate(0deg)');
-    }
-  });
-});
-  </script>
 </main>
