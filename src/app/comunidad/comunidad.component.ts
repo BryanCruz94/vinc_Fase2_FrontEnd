@@ -24,11 +24,11 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       sector: 'Luz de America',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/LuzDeAmerica/GadLuzDeAmerica.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/LuzDeAmerica/GadLuzMap.png',
-      atencion: '08:00am – 17:00pm',
-      contacto: '0994413190 - 022722055',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/LuzDeAmerica/GadLuz_PopUp.png',
+      atencion: 'Lunes a Viernes 8:00am - 12:30pm, 13:30pm - 17:00pm',
+      contacto: '(02) 2722 055',
       correo: 'gpluzamerica@hotmail.com',
-      ubicacion: 'https://goo.gl/maps/kZ8PkrgQBuMNg1FT6'
+      ubicacion: 'https://maps.app.goo.gl/4wZ8LaQxbKbsAWSb8?g_st=ic'
     },
     {
       title: 'UPC',
@@ -37,7 +37,7 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       img: '../../assets/img/DirectorioComunidad/Organismos/PoliciaNacional.jpg',
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/UPC/UPC.jpg',
       atencion: '00:00am – 23:59pm',
-      contacto: '022 233 283',
+      contacto: '(02) 2233 283 - 911',
       correo: 'dnpolco.servicios@gmail.com',
       ubicacion: 'https://goo.gl/maps/fzFyUXTvZGEezhL3A'
     },
@@ -47,9 +47,9 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.jpg',
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/MSP/MSP.jpg',
-      atencion: '24 horas',
-      contacto: '(+593) 2-2381-4400 ext. 110, 1109',
-      correo: 'ventanillaunica.msp@msp.gob.ec',
+      atencion: 'Lunes a Domingo 8:00 am - 17:00pm',
+      contacto: '(02) 272 2234',
+      correo: 'scs.luzdeamerica.area17@gmail.com',
       ubicacion: 'https://goo.gl/maps/RYYiFo5Kkjr6UbB58'
     },
     {
@@ -71,7 +71,7 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       img: '../../assets/img/DirectorioComunidad/Escuelas/LuzAmerica.jpg',
       imgPop: '../../assets/img/DirectorioComunidad/Escuelas/LuzAmerica/foto1.jpg',
       atencion: 'Lunes a Viernes de 7:00 am - 15:00 pm',
-      contacto: '02 272 2231',
+      contacto: '(02) 272 2231',
       correo: 'ueluzdeamerica2@hotmail.com',
       ubicacion: 'https://goo.gl/maps/8yBheA9HbrS1Wy2QA'
     },
@@ -82,7 +82,7 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       img: '../../assets/img/DirectorioComunidad/Escuelas/TreceAbril.jpg',
       imgPop: '../../assets/img/DirectorioComunidad/Escuelas/TreceAbril/foto1.jpg',
       atencion: 'Lunes a Viernes de 7:00 am - 15:00 pm',
-      contacto: '02 272 2109',
+      contacto: '(02) 272 2109',
       correo: 'escuelatrecedeabril@gmail.com',
       ubicacion: 'https://goo.gl/maps/rLetQZyVfoB6rGyt9'
     },
@@ -99,9 +99,9 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       img: '../../assets/img/DirectorioComunidad/Escuelas/PuertoLimon/EscuelaPuertoLimon.png',
       imgPop: '../../assets/img/DirectorioComunidad/Escuelas/PuertoLimon/PopUp_PuertoLimon.png',
   
-      atencion: 'Lunes a Viernes',
-      contacto: '593-2-396-1300',
-      correo: 'xxxx',
+      atencion: 'Lunes a Viernes 7:00am - 16:00pm',
+      contacto: '098 082 0480',
+      correo: 'fabianj.rodriguez@educacion.gob.ec',
       ubicacion: 'https://maps.app.goo.gl/ME1e4hvXTbYthM7V7?g_st=ic'
     },
     {
@@ -110,8 +110,8 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.jpeg',
-      atencion: '00:00am – 23:59pm',
-      contacto: '(02) 385-6296',
+      atencion: 'Lunes a Viernes 8:00am - 12:30pm, 13:30pm - 17:00pm',
+      contacto: '(02) 385 6296',
       correo: 'info@puertolimon.gob.ec',
       ubicacion: 'https://goo.gl/maps/ZVavgPSgLGexqj5c6'
     },
@@ -119,12 +119,12 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       title: 'Ministerio de Salud Pública',
       sector: 'Puerto Limón',
       category: 'Entidad Pública',
-      img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.jpg',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/MSP/MSP.jpg',
-      atencion: '24 horas',
-      contacto: '(+593) 2-2381-4400 ext. 110, 1109',
-      correo: 'ventanillaunica.msp@msp.gob.ec',
-      ubicacion: 'https://goo.gl/maps/RYYiFo5Kkjr6UbB58'
+      img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.xxx',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/MSP/MSP.xxx',
+      atencion: 'Lunes a Domingo 8:00 am - 17:00pm',
+      contacto: '(02) 385 6295',
+      correo: 'geosalud.msp.gob.ec',
+      ubicacion: 'xxxx'
     },
     {
       title: 'Cuerpo de Bomberos',
@@ -135,7 +135,7 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       atencion: 'Lunes a Viernes 8:00am -16:30pm',
       contacto: '911 – 102',
       correo: 'info@bpvm.gob.ec',
-      ubicacion: 'https://goo.gl/maps/v9kNgeRwV59yi5cQ7'
+      ubicacion: 'https://maps.app.goo.gl/Ti55x1Xd68vG7EhX6?g_st=ic'
     },
 // *********************************************************************+
     //                      SECTOR EL ESFUERZO
@@ -147,9 +147,9 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       category: 'Escuela',
       img: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/EscuelaElEsfuerzo.png',
       imgPop: '../../assets/img/DirectorioComunidad/Escuelas/ElEsfuerzo/PopUp_ElEsfuerzo.jpg',
-      atencion: 'Lunes a Viernes',
-      contacto: '02 384 0105',
-      correo: 'escuelatrecedeabril@gmail.com',
+      atencion: 'Lunes a Viernes 7:00am - 16:00pm',
+      contacto: '098 119 6250',
+      correo: 'darwin.meza@educacion.gob.ec',
       ubicacion: 'https://goo.gl/maps/P1oLpYqzQm35RTuL7'
     },
     {
@@ -157,10 +157,10 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       sector: 'El Esfuerzo',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo.png',
-      atencion: '00:00am – 23:59pm',
-      contacto: '022 233 283',
-      correo: 'dnpolco.servicios@gmail.com',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/GadElEsfuerzo_POPUP.png',
+      atencion: 'Lunes a Viernes 8:00am - 12:30pm, 13:30pm - 17:00pm',
+      contacto: '099 374 4437',
+      correo: 'gadelesfuerzo@hotmail.com',
       ubicacion: 'https://goo.gl/maps/fzFyUXTvZGEezhL3A'
     },
     {
@@ -170,21 +170,20 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       img: '../../assets/img/DirectorioComunidad/Organismos/PoliciaNacional.jpg',
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/UPC_ElEsfuerzo.jpeg',
       atencion: '00:00am – 23:59pm',
-      contacto: '022 233 283',
-      correo: 'dnpolco.servicios@gmail.com',
-      ubicacion: 'https://goo.gl/maps/fzFyUXTvZGEezhL3A'
+      contacto: '911',
+      correo: 'xxxxx',
+      ubicacion: 'https://maps.app.goo.gl/qcviim51Tq4ov1oK7?g_st=ic'
     },
     {
       title: 'Ministerio de Salud Pública',
       sector: 'El Esfuerzo',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.jpg',
-
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/MSP_ElEsfuerzo.jpeg',
-      atencion: '24 horas',
-      contacto: '(+593) 2-2381-4400 ext. 110, 1109',
-      correo: 'ventanillaunica.msp@msp.gob.ec',
-      ubicacion: 'https://goo.gl/maps/RYYiFo5Kkjr6UbB58'
+      atencion: 'Lunes a Domingo 8:00 am - 17:00pm',
+      contacto: '(022) 384 0173',
+      correo: 'geosalud.msp.gob.ec',
+      ubicacion: 'https://maps.app.goo.gl/dy29ayQspGWurTu37?g_st=ic'
     }
     
   ];
