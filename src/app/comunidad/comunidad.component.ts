@@ -109,22 +109,22 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       sector: 'Puerto Limón',
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.png',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon.jpeg',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/GadPuertoLimon_PopU.png',
       atencion: 'Lunes a Viernes 8:00am - 12:30pm, 13:30pm - 17:00pm',
       contacto: '(02) 385 6296',
       correo: 'info@puertolimon.gob.ec',
-      ubicacion: 'https://goo.gl/maps/ZVavgPSgLGexqj5c6'
+      ubicacion: 'https://maps.app.goo.gl/q9RgcZtw9mmN7nZg7?g_st=ic'
     },
     {
       title: 'Ministerio de Salud Pública',
       sector: 'Puerto Limón',
       category: 'Entidad Pública',
-      img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.xxx',
-      imgPop: '../../assets/img/DirectorioComunidad/Organismos/MSP/MSP.xxx',
+      img: '../../assets/img/DirectorioComunidad/Organismos/MinisterioDeSaludPublica.jpg',
+      imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/MSP_PtoLimon_POPUP.png',
       atencion: 'Lunes a Domingo 8:00 am - 17:00pm',
       contacto: '(02) 385 6295',
-      correo: 'geosalud.msp.gob.ec',
-      ubicacion: 'xxxx'
+      correo: 'scspuertolimon@gmail.com',
+      ubicacion: 'https://maps.app.goo.gl/4E4ewvDrGrmJkoxk6?g_st=ic'
     },
     {
       title: 'Cuerpo de Bomberos',
@@ -132,9 +132,9 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       category: 'Entidad Pública',
       img: '../../assets/img/DirectorioComunidad/Organismos/Bomberos.jpg',
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/PtoLimon/CuerpoBomberos_PuertoLimon.jpeg',
-      atencion: 'Lunes a Viernes 8:00am -16:30pm',
-      contacto: '911 – 102',
-      correo: 'info@bpvm.gob.ec',
+      atencion: '00:00am – 23:59pm',
+      contacto: '911 – (02) 395 9340',
+      correo: 'info@cbsd.gob.ec',
       ubicacion: 'https://maps.app.goo.gl/Ti55x1Xd68vG7EhX6?g_st=ic'
     },
 // *********************************************************************+
