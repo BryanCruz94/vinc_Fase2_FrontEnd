@@ -57,7 +57,9 @@ export class Grafico1F2Component implements OnInit {
       this.chartOptions = {
         animationEnabled: true,
         title: {
-          text: "Total de Incidentes en Unidades Educativas del Sector"
+          text: "Total de Incidentes en Unidades Educativas",
+          fontSize: 20,
+          
         },
         data: [{
           type: "doughnut",
