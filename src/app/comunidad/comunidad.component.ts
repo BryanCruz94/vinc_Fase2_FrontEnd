@@ -171,7 +171,7 @@ export class ComunidadComponent implements OnInit { // Implementar OnInit
       imgPop: '../../assets/img/DirectorioComunidad/Organismos/ElEsfuerzo/UPC_ElEsfuerzo.jpeg',
       atencion: '00:00am – 23:59pm',
       contacto: '911',
-      correo: 'xxxxx',
+      correo: 'upcelesfuerzo@gmail.com',
       ubicacion: 'https://maps.app.goo.gl/qcviim51Tq4ov1oK7?g_st=ic'
     },
     {
