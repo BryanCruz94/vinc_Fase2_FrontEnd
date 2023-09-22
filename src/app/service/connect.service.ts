@@ -99,6 +99,12 @@ export class ConnectService {
     const url = `${base_url}/grafica/anios_UE_F2`;
     return this.http.get<any>(url);
   }
+
+  //CARGAR MESES SEGUN FILTRO DE SECTOR, UNIDAD EDUCATIVA Y AÑO
+  cargarMeses_UE_F2(sector: string, ue: string, year: string) {
+    const url = `${base_url}/grafica/meses_UE_F2?sector=${sector}&ue=${ue}&year=${year}`;
+    return this.http.get<any>(url);
+  }
     
   cargarSector_911_F2(): Observable<string[]> {
     const url = `${base_url}/grafica/sectores_911_F2`;

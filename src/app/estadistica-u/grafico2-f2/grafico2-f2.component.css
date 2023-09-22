@@ -3,3 +3,11 @@
     width: 100%;
     max-width: 100% !important;
 }
+
+
+#barChart{
+    /* Colocar un enfecto de borde redondeado con sombra */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    width: 98% !important;
+}

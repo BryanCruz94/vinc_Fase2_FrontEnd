@@ -176,6 +176,7 @@ export class EstadisticaUComponent implements OnInit {
     console.log(`Filtrar por año: ${yearValue}`);
     this.isMonthSelectDisabled= false;
     this.selectedYearUE = yearValue;
+    this.getMesesUE_F2();
     if (yearValue === 'all') {
       this.isMonthSelectDisabled= true;
       this.filteredTransactionsUE = [...this.transactionsUE];
@@ -242,6 +243,24 @@ export class EstadisticaUComponent implements OnInit {
   getAnios911F2(): void {
     this.connectService.cargarAnios_UE_F2().subscribe((data: string[]) => {
       this.yearsUE = data.sort((a, b) => a.localeCompare(b));
+      console.log(data);
+    });
+  }
+
+  // OBTIENE LOS MESES DE INCIDENTES FILTRADO POR SECTOR, UNIDAD EDUCATIVA Y AÑO
+  getMesesUE_F2(): void {
+    this.connectService.cargarMeses_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,this.selectedYearUE).subscribe((data: string[]) => {
+      const mesesEnOrdenCronologico = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+      ];
+      
+      // Luego, ordena los valores de 'data' según esta lista
+      this.monthUEString = data.sort((a, b) => {
+        const indexA = mesesEnOrdenCronologico.indexOf(a);
+        const indexB = mesesEnOrdenCronologico.indexOf(b);
+        return indexA - indexB;
+      });
       console.log(data);
     });
   }
