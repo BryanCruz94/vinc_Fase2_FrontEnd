@@ -29,6 +29,7 @@ export class EstadisticaUComponent implements OnInit {
     { name: "Diciembre", num: "12" }
   ];
   monthUEString: string[] = this.monthUE.map((month) => month.name);
+  pandillas: number = 0;
   total: number = 0;
 
   // VARIABLES PARA FILTROS
@@ -54,6 +55,7 @@ export class EstadisticaUComponent implements OnInit {
     violenciaPares: 0,
     otros: 0,
     sinIncidente: 0,
+    pandillas: 0,
     total: 0
   };
 
@@ -94,6 +96,7 @@ export class EstadisticaUComponent implements OnInit {
     this.connectService.cargarTotalIncidentes_UE().subscribe((data: any) => {
       this.dataIncidentesUE = data;
       this.total = this.dataIncidentesUE.total;
+      this.pandillas = this.dataIncidentesUE.pandillas;
       
       const currentYear = new Date().getFullYear().toString();
       this.transactionsUE = [
@@ -132,6 +135,7 @@ export class EstadisticaUComponent implements OnInit {
     } else {
       this.connectService.cargarTotalIncidentesPorSectorUE(selectedSector).subscribe((res: any) => {
         this.total = res.total;
+        this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
           .map(([item, cost]) => ({
@@ -157,6 +161,7 @@ export class EstadisticaUComponent implements OnInit {
     } else {
       this.connectService.cargaInvidentesPorSectorAndUe_UE_F2(this.selectedSectorUE,this.selectedCollegeUE).subscribe((res: any) => {
         this.total = res.total;
+        this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
           .map(([item, cost]) => ({
@@ -184,6 +189,7 @@ export class EstadisticaUComponent implements OnInit {
     }else{
       this.connectService.cargarIncidentesPorSectorYUeYAnio_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,yearValue).subscribe((res: any) => {
         this.total = res.total;
+        this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
           .map(([item, cost]) => ({
@@ -208,6 +214,7 @@ export class EstadisticaUComponent implements OnInit {
     }else{
       this.connectService.cargarIncidentesPorSectorYUeYAnioYMes_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,this.selectedYearUE,monthValue).subscribe((res: any) => {
         this.total = res.total;
+        this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
           .map(([item, cost]) => ({

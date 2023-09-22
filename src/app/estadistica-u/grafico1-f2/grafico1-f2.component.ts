@@ -18,6 +18,7 @@ export class Grafico1F2Component implements OnInit {
     bullyng: 0,
     alcoholDrogas: 0,
     violenciaPares: 0,
+    pandillas: 0,
     otros: 0,
     sinIncidente: 0,
     total: 0

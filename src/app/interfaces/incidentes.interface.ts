@@ -52,6 +52,7 @@ export interface ResultObject_UE {
     violenciaPares: number,
     otros: number,
     sinIncidente: number,
+    pandillas: number,
     total: number
 
 };
