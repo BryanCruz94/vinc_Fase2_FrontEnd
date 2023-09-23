@@ -31,6 +31,7 @@ export class EstadisticaUComponent implements OnInit {
   monthUEString: string[] = this.monthUE.map((month) => month.name);
   pandillas: number = 0;
   total: number = 0;
+  totalPandillas: number = 0;
 
   // VARIABLES PARA FILTROS
   selectedSectorUE: string = 'all'; // Agregar propiedad para el sector seleccionado
@@ -95,7 +96,7 @@ export class EstadisticaUComponent implements OnInit {
   inicializarDatos() {
     this.connectService.cargarTotalIncidentes_UE().subscribe((data: any) => {
       this.dataIncidentesUE = data;
-      this.total = this.dataIncidentesUE.total;
+      this.total = this.totalPandillas = this.dataIncidentesUE.total;
       this.pandillas = this.dataIncidentesUE.pandillas;
       
       const currentYear = new Date().getFullYear().toString();
@@ -134,10 +135,11 @@ export class EstadisticaUComponent implements OnInit {
       this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
     } else {
       this.connectService.cargarTotalIncidentesPorSectorUE(selectedSector).subscribe((res: any) => {
-        this.total = res.total;
+        this.total = this.totalPandillas = res.total;
         this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
-          .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
+// Filtra el elemento con nombre 'total y elementos con nombre 'pandillas
+          .filter(([item, _]) => item !== 'total' && item !== 'pandillas')
           .map(([item, cost]) => ({
             item: this.labelMappings[item.toString()] || item,
             cost,
@@ -160,7 +162,7 @@ export class EstadisticaUComponent implements OnInit {
       this.connectService.setFilteredTransactionsUE(this.filteredTransactionsUE);
     } else {
       this.connectService.cargaInvidentesPorSectorAndUe_UE_F2(this.selectedSectorUE,this.selectedCollegeUE).subscribe((res: any) => {
-        this.total = res.total;
+        this.total = this.totalPandillas = res.total;
         this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
@@ -189,7 +191,6 @@ export class EstadisticaUComponent implements OnInit {
     }else{
       this.connectService.cargarIncidentesPorSectorYUeYAnio_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,yearValue).subscribe((res: any) => {
         this.total = res.total;
-        this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
           .map(([item, cost]) => ({
@@ -214,7 +215,6 @@ export class EstadisticaUComponent implements OnInit {
     }else{
       this.connectService.cargarIncidentesPorSectorYUeYAnioYMes_UE_F2(this.selectedSectorUE,this.selectedCollegeUE,this.selectedYearUE,monthValue).subscribe((res: any) => {
         this.total = res.total;
-        this.pandillas = res.pandillas;
         const filteredItems = Object.entries(res)
           .filter(([item, _]) => item !== 'total') // Filtra el elemento con nombre 'total'
           .map(([item, cost]) => ({

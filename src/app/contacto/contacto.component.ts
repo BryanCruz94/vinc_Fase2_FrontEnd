@@ -14,19 +14,19 @@ export class ContactoComponent {
       name: 'Luis Castillo',
       range: 'Director de Proyecto',
       gmail: 'lacastillo12@espe.edu.ec',
-      url: '../../assets/img/administradores/LuisCastillo.png'
+      url: 'assets/img/administradores/LuisCastillo.png'
     },
     {
       name: 'Veronica Martinez',
       range: 'Docente de Apoyo',
       gmail: 'vimartinez1@espe.edu.ec',
-      url: '../../assets/img/administradores/VeronicaMartinez.png'
+      url: 'assets/img/administradores/VeronicaMartinez.png'
     },
     {
       name: 'Edwin Camino',
       range: 'Docente de Apoyo',
       gmail: 'eccamino@espe.edu.ec',
-      url: '../../assets/img/administradores/Edwin_Camino.jpg'
+      url: 'assets/img/administradores/Edwin_Camino.jpg'
     }
   ];
 }

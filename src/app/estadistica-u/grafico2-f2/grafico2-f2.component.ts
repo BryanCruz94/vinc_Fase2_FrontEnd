@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./grafico2-f2.component.css']
 })
 export class Grafico2F2Component implements OnInit {
-  public chart!: Chart;
+  public chart!: Chart; 
 
   constructor(private connectService: ConnectService) { }
 
@@ -24,7 +24,9 @@ export class Grafico2F2Component implements OnInit {
   }
 
   createBarChart(transactions: Transaction[]): void {
-    const labels = transactions.map(transaction => transaction.item);
+    const labels = transactions
+    .filter(transaction => transaction.item !== 'pandillas')
+    .map(transaction => transaction.item);
     const data: ChartData<any, any> = {
       labels: labels,
       datasets: [{
