@@ -49,13 +49,15 @@ export class Grafico1Component implements OnInit {
                    this.dataIncidentes.sinIncidente +
                    this.dataIncidentes.otros;
 
+      const incidente = this.total - this.dataIncidentes.sinIncidente;
+
       this.roboRes = (this.dataIncidentes.robo / this.total) * 100;
       this.emergenciaRes = (this.dataIncidentes.emergenciaMedica / this.total) * 100;
       this.incendioRes = (this.dataIncidentes.incendio / this.total) * 100;
       this.desastreRes = (this.dataIncidentes.desastreNatural / this.total) * 100;
       this.accidenteRes = (this.dataIncidentes.accidenteDeTrafico / this.total) * 100;
       this.sinIncidenteRes = (this.dataIncidentes.sinIncidente / this.total) * 100;
-      this.otrosRes = (this.dataIncidentes.otros / this.total) * 100;
+      this.otrosRes = (this.dataIncidentes.otros / this.total) * 100; 
 
       this.chartOptions = {
         animationEnabled: true,

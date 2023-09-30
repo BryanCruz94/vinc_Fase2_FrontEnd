@@ -45,6 +45,8 @@ export class Grafico1F2Component implements OnInit {
       this.dataIncidentes = res;
 
       this.total = this.dataIncidentes.total;
+      this.sinIncidenteRes = ((this.dataIncidentes.sinIncidente / this.total) * 100);
+      const incidentes = this.total - this.dataIncidentes.sinIncidente;
 
       this.roboRes = (this.dataIncidentes.robo / this.total) * 100;
       this.acosoSexualRes = (this.dataIncidentes.acosoSexual / this.total) * 100;
@@ -52,7 +54,7 @@ export class Grafico1F2Component implements OnInit {
       this.alcoholDrogasRes = (this.dataIncidentes.alcoholDrogas / this.total) * 100;
       this.violenciaParesRes = (this.dataIncidentes.violenciaPares / this.total) * 100;
       this.otrosRes = (this.dataIncidentes.otros / this.total) * 100;
-      this.sinIncidenteRes = ((this.dataIncidentes.sinIncidente / this.total) * 100);
+      
 
 
       this.chartOptions = {
@@ -66,10 +68,10 @@ export class Grafico1F2Component implements OnInit {
           type: "doughnut",
           yValueFormatString: "#,###.##'%'",
           indexLabel: "{name}: {y}",
-          dataPoints: [
-            // { y: this.sinIncidenteRes, name: "Sin Incidentes" },
-            { y: this.roboRes, name: "Robo" },
+          dataPoints: [ 
+            { y: this.sinIncidenteRes, name: "Sin Incidentes" },
             { y: this.acosoSexualRes, name: "Acoso Sexual" },
+            { y: this.roboRes, name: "Robo" },
             { y: this.bullyngRes, name: "Bullying" },
             { y: this.alcoholDrogasRes, name: "Alcohol y Drogas" },
             { y: this.violenciaParesRes, name: "Violencia entre Pares" },
