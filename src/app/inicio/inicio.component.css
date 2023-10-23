@@ -173,3 +173,11 @@
         margin-bottom: 20px;
     }
 }
+
+a {
+    color: #075f11; /* Cambia #FF0000 al color que desees */
+    text-decoration: none; /* Elimina la subrayado predeterminado */
+    /* colocar negrita y cursiva */
+    font-weight: bold;
+    font-style: italic;
+}
