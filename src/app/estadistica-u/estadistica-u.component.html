@@ -76,12 +76,15 @@
     </div>
 
     <div id="reportePandillas">
-        ** La cantidad de encuestados que respondió haber identificado
-        <span class="textoNeg">GRUPOS JUVENILES PROBLEMÁTICOS</span>
-        en su Unidad Educativa según el filtro seleccionado es de <span class="textoNeg">{{ pandillas }}</span>, de un
-        total de <span class="textoNeg">{{ totalPandillas }}</span> encuestados.
-        sin embargo, no se ha tomado este dato dentro de los gráficos anteriores,
-        ya que no se considera un incidente particular.
+        ** La cantidad de encuestados que respondió haber identificado a <span class="textoNeg">GRUPOS JUVENILES
+            PROBLEMÁTICOS</span> en su Unidad Educativa respectiva es de <span class="textoNeg">{{pandillas }}</span>,
+        que corresponde al {{ (pandillas/totalPandillas*100).toFixed(2) }}% de un total de <span class="textoNeg">{{
+            totalPandillas}}</span> encuestados.
+        <br>
+        Sin embargo, no se ha tomado este dato dentro de los gráficos anteriores, ya que no se considera un incidente
+        particular.
+
+
     </div>
 
     <!-- SEGUNDO GRÁFICO -->
